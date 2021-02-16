@@ -1,24 +1,21 @@
-# README
+Installing Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby
+- SQLite3
+- Node.js
+- Yarn
 
-Things you may want to cover:
+gem install rails
 
-* Ruby version
+bundle install
 
-* System dependencies
+Ruby 2.7.2
+Rails 6.1.2.1
 
-* Configuration
+Cписок сущностей (объектов реального мира) для проекта TESTER:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Вопрос
+- Ответ
+- Тест
+- Результат теста
+- Пользователь

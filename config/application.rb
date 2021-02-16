@@ -18,7 +18,7 @@ module Tester
     #
     config.time_zone = 'Europe/Kiev'
     # Permitted locales available for the application
-    I18n.available_locales = %i[en ru]
+    config.i18n.available_locales = %i[en ru]
     # Set default locale
     config.i18n.default_locale = :ru
     # config.eager_load_paths << Rails.root.join("extras")
