@@ -16,14 +16,11 @@ module Tester
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = 'EEST - Eastern European Summer Time'
+    config.time_zone = 'Europe/Kiev'
+    # Permitted locales available for the application
+    I18n.available_locales = %i[en ru]
+    # Set default locale
+    config.i18n.default_locale = :ru
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
-
-Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
-  * rubocop-rails (http://github.com/rubocop-hq/rubocop-rails)
-
-You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
-  AllCops:
-    SuggestExtensions: false
