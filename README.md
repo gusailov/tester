@@ -1,24 +1,20 @@
-# README
+Installing Rails
+https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- install Ruby
+- install SQLite3
+- install Node.js
+- install Yarn
+- gem install rails
+- bundle install
 
-Things you may want to cover:
+Ruby 2.7.2
+Rails 6.1.2.1
 
-* Ruby version
+Cписок сущностей (объектов реального мира) для проекта TESTER:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Вопрос
+- Ответ
+- Тест
+- Результат теста
+- Пользователь
