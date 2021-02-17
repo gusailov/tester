@@ -1,13 +1,12 @@
 Installing Rails
+https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails
 
-- Ruby
-- SQLite3
-- Node.js
-- Yarn
-
-gem install rails
-
-bundle install
+- install Ruby
+- install SQLite3
+- install Node.js
+- install Yarn
+- gem install rails
+- bundle install
 
 Ruby 2.7.2
 Rails 6.1.2.1
