@@ -47,4 +47,12 @@ answers_params = [
   { body: '21', question_id: question_5.id, correct: true },
   { body: '22', question_id: question_5.id }
 ]
-answers = Answer.create(answers_params)
+
+Answer.create(answers_params)
+
+result_params = [
+  { user_id: user_1.id, test_id: test_1.id, completed: true },
+  { user_id: user_2.id, test_id: test_2.id }
+]
+
+Result.create(result_params)
