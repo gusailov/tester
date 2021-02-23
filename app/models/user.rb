@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  def user_tests(level)
-    Result.select(user_id: id).joins(:tests).where(test: { level: level })
+  def tests_with_level(level)
+    Test.joins('JOIN results ON tests.id = results.test_id')
+        .where('level = :level AND results.user_id = :id', level: level, id: id)
   end
 end
