@@ -13,11 +13,13 @@ categories_params = [{ title: 'Programming' }, { title: 'Mathematics' }, { title
 
 categories = Category.create(categories_params)
 
-test_1 = Test.create(title: 'Ruby Language', category_id: categories[0].id, level: 2)
-test_2 = Test.create(title: 'JavaScript', category_id: categories[0].id, level: 1)
-test_3 = Test.create(title: 'HTML/CSS', category_id: categories[0].id)
-test_4 = Test.create(title: 'Elementary', category_id: categories[1].id)
-test_5 = Test.create(title: 'Artists', category_id: categories[2].id)
+test_1 = Test.create(title: 'Ruby Language', category_id: categories[0].id, author_id: user_2.id,
+                     level: 2)
+test_2 = Test.create(title: 'JavaScript', category_id: categories[0].id, author_id: user_2.id,
+                     level: 1)
+test_3 = Test.create(title: 'HTML/CSS', category_id: categories[0].id, author_id: user_2.id)
+test_4 = Test.create(title: 'Elementary', category_id: categories[1].id, author_id: user_2.id)
+test_5 = Test.create(title: 'Artists', category_id: categories[2].id, author_id: user_1.id)
 
 question_1 = Question.create(body: '2 + 2 = ?',  test_id: test_4.id)
 question_2 = Question.create(body: '4 - 5  = ?', test_id: test_4.id)
@@ -52,7 +54,9 @@ Answer.create(answers_params)
 
 result_params = [
   { user_id: user_1.id, test_id: test_1.id, completed: true },
-  { user_id: user_2.id, test_id: test_2.id }
+  { user_id: user_2.id, test_id: test_1.id },
+  { user_id: user_2.id, test_id: test_2.id, completed: true },
+  { user_id: user_1.id, test_id: test_2.id }
 ]
 
 Result.create(result_params)
