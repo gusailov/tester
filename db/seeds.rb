@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_1 = User.create(name: 'Vova', surname: 'Ruby', dob: '19841023', role: 'user')
-user_2 = User.create(name: 'Misha', surname: 'Rails', dob: '19860714', role: 'user')
+user_1 = User.create(name: 'Vova', surname: 'Ruby', email: 'vova@email.com', dob: '19841023',
+                     role: 'user')
+user_2 = User.create(name: 'Misha', surname: 'Rails', email: 'misha@email.com', dob: '19860714',
+                     role: 'user')
 
 categories_params = [{ title: 'Programming' }, { title: 'Mathematics' }, { title: 'Art' }]
 
