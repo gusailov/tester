@@ -6,3 +6,7 @@ Layout/LineLength:
   Max: 100
 Metrics/MethodLength:
   Max: 15
+Style:
+  AutoCorrect: false
+Rails/Delegate:
+  Enabled: false

@@ -16,8 +16,11 @@ class Test < ApplicationRecord
 
   scope :with_level, ->(level) { where(level: level) }
 
-  scope :titles_by_category, lambda { |title|
-                               Test.joins(:category).where(categories: { title: title })
-                                   .order(title: :desc).pluck(:title)
-                             }
+  scope :by_category, ->(title) {
+                        joins(:category).where(categories: { title: title }).order(title: :desc)
+                      }
+
+  def self.titles_by_category(title)
+    by_category(title).pluck(:title)
+  end
 end
