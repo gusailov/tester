@@ -4,7 +4,11 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render plain: "Questions of test #{@test.title}: #{@test.questions.inspect} "
+    render inline: 'Questions of test <%= @test.title %> :
+      <ul>  <% @test.questions.map do |question| %>
+        <li><%= question.body %></li>
+        <% end %>
+      </ul>'
   end
 
   def show
