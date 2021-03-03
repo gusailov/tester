@@ -1,10 +1,11 @@
 class QuestionsController < ApplicationController
   def index
-    render plain: Test.find(params[:test_id]).questions.inspect
+    render plain: "Questions: of test: #{@test}"
+    # {@test.questions.inspect}
   end
 
   def show
-    render plain: "Question show: #{Question.find(params[:id]).inspect}"
+    render plain: "Questions: #{Question.find(params[:id]).inspect}"
   end
 
   def new
@@ -21,6 +22,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
 
   def question_params
     params.permit(:body, :test_id)
