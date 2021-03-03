@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
+  before_action :find_test
+
   def index
-    render plain: "Questions: of test: #{@test}"
-    # {@test.questions.inspect}
+    render plain: "Questions: #{@test.questions.inspect} of test: #{@test}"
   end
 
   def show
