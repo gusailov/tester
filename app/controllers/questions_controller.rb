@@ -1,12 +1,14 @@
 class QuestionsController < ApplicationController
-  before_action :find_test
+  before_action :find_test, only: %i[index]
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render plain: "Questions: #{@test.questions.inspect} of test: #{@test}"
+    render plain: "Questions of test #{@test.title}: #{@test.questions.inspect} "
   end
 
   def show
-    render plain: "Questions: #{Question.find(params[:id]).inspect}"
+    render plain: "Question: #{Question.find(params[:id]).inspect}"
   end
 
   def new
@@ -30,5 +32,9 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.permit(:body, :test_id)
+  end
+
+  def rescue_with_question_not_found
+    render plain: 'Question was not found'
   end
 end
