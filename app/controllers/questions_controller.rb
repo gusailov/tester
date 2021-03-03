@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: Question.find(params[:id]).inspect
+    render plain: "Question show: #{Question.find(params[:id]).inspect}"
   end
 
   def new
@@ -12,7 +12,12 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.create(question_params)
-    render plain: question.inspect
+    render plain: "Question created: #{question.inspect}"
+  end
+
+  def destroy
+    render plain: "Question deleted: #{Question.find(params[:question_id]).inspect}"
+    Question.delete(params[:question_id])
   end
 
   private
