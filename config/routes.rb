@@ -4,6 +4,4 @@ Rails.application.routes.draw do
   resources :tests do
     resources :questions, shallow: true
   end
-
-  get '/delete/questions/:question_id', to: 'questions#destroy'
 end

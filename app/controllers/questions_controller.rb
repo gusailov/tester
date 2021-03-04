@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index]
+  before_action :find_test, only: %i[index destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -24,8 +24,11 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    render plain: "Question deleted: #{Question.find(params[:question_id]).inspect}"
-    Question.delete(params[:question_id])
+    @question = Question.find(params[:id])
+
+    @question.destroy
+
+    redirect_to test_questions_path(@test)
   end
 
   private
