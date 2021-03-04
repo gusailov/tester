@@ -1,0 +1,7 @@
+ <h3>Questions of test : <%= @test.title %> </h3>
+      <ul>  <% @questions.map do |question| %>
+        <li><%= question.body %>
+        <%= link_to "Delete", test_question_path(@test, question), method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
+        <% end %>
+      </ul>'

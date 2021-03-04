@@ -1,14 +1,10 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index destroy]
+  before_action :find_test, only: %i[index create destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render inline: 'Questions of test <%= @test.title %> :
-      <ul>  <% @test.questions.map do |question| %>
-        <li><%= question.body %></li>
-        <% end %>
-      </ul>'
+    @questions = @test.questions
   end
 
   def show
@@ -20,10 +16,12 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.create(question_params)
-    render plain: "Question created: #{question.inspect}"
+    # render plain: "Question created: #{question.inspect}"
+    redirect_to test_questions_path(@test)
   end
 
   def destroy
+    # render plain: "Question destroy: #{Question.find(params[:id])} test #{@test} "
     @question = Question.find(params[:id])
 
     @question.destroy
