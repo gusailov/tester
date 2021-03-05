@@ -21,7 +21,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    # render plain: "Question destroy: #{Question.find(params[:id])} test #{@test} "
     @question = Question.find(params[:id])
 
     @question.destroy
