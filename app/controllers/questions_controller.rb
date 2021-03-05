@@ -16,7 +16,6 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.create(question_params)
-    # render plain: "Question created: #{question.inspect}"
     redirect_to test_questions_path(@test)
   end
 
