@@ -1,9 +1,9 @@
 <%= form_with model:  [@test,@question], local:true do |form| %>
-     <p>
+  <p>
    <%= form.label :body%>
    <%= form.text_field :body, id: :question_body %>
+   <%= form.hidden_field :test_id, id: :test_id, :value => @test.id %>
   </p>
-  
   
   <p><%= form.submit%></p>
 
