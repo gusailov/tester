@@ -2,7 +2,18 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;">
+  text-align: center;
+  font-size: 1.2rem">
 
-<%= Time.now.strftime("%Y") %>
+<span> <%= link_to "Tester |", 'https://github.com/gusailov/tester', target: :blank %></span>
+
+<span> 
+  <%= link_to "App for create&pass tests (training project) |", 
+  'https://launchschool.com/books/ruby/read/introduction', target: :blank %>
+</span>
+
+<span> <%= link_to "© Gusailov |", 'https://github.com/gusailov', target: :blank %></span>
+
+<span> <%= Time.now.strftime("%Y") %></span>
+
 </footer>
