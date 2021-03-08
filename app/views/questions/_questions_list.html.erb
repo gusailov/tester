@@ -1,7 +1,7 @@
-
-      <ul>  <% questions.map do |question| %>
-        <li><%= question.body %>
-        <%= link_to "Delete", test_question_path(@test, question), method: :delete, data: { confirm: "Are you sure?" } %>
-        </li>
+<ul>  <% questions.map do |question| %>
+        <li><%= question.body %> </li>
+        <%= link_to "Edit", edit_test_question_path(@test, question) %>
+       <div> <%= link_to "Delete", test_question_path(@test, question), 
+        method: :delete, data: { confirm: "Are you sure?" } %> </div>
         <% end %>
-      </ul>'
+      </ul>
