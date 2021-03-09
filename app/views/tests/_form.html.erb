@@ -2,7 +2,7 @@
  <%= render "/shared/errors", resource: @test %> 
   <p>
    <%= form.label :author %>
-   <%= form.text_field :author_id, id: :author_id %>
+   <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
   </p>
    <p>
    <%= form.label :title %>
