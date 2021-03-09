@@ -1,19 +1,19 @@
 <tr >
-  <td ><%= test.title %></td>
+  <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.title %></td>
 
-  <td ><%= test.category.title %></td>
+  <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.category.title %></td>
 
-  <td><%= test.level %></td>
+  <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.level %></td>
 
-  <td><%= test.questions.count %></td>
+  <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.questions.count %></td>
 
-  <td style = "border-left: 1px solid black;padding: 0.5rem;"><%= link_to "Show", test_path(test) %></td>
+  <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= link_to "Show", test_path(test) %></td>
 
-  <td style = "border-left: 1px solid black;"><%= link_to "Edit", edit_test_path(test) %></td>
+  <td style = "border-right: 1px solid black;"><%= link_to "Edit", edit_test_path(test) %></td>
 
-  <td style = "border-left: 1px solid black;"
+  <td style = "border-right: 1px solid black;"
     ><%= link_to "Delete", test_path(test), method: :delete, data: { confirm: "Are you sure?" } %></td
   >
 
-  <td style = "border-left: 1px solid black;"><%= link_to "Add question", new_test_question_path(test) %></td>
+  <td style = "border-right: 1px solid black;"><%= link_to "Add question", new_test_question_path(test) %></td>
 </tr>
