@@ -1,11 +1,11 @@
-<%if resource.errors.present? %>
+<% if resource.errors.present? %>
   <div>
-    <h3><%= pluralize(resource.errors.count, 'error') %> detected:</h3>
+    <h3><%= pluralize(resource.errors.count, "error") %> detected:</h3>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %> </li>
-      <%end %>
+      <% end %>
     </ul>  
   <div>
  
-<%end %>
+<% end %>
