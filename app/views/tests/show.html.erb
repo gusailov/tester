@@ -3,6 +3,12 @@
 <h3>Level : <%= @test.level %> </h3>
   
 <h4>Questions:  </h4>
-  <%= render '/questions/questions_list', questions: @test.questions %>
-  
-<%= link_to "Add question", new_test_question_path(@test) %>
+
+<ul>
+  <%= render @test.questions %>
+</ul>
+
+
+<div>
+  <%= link_to "Add question", new_test_question_path(@test) %>  
+</div>  

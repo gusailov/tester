@@ -8,16 +8,11 @@ class QuestionsController < ApplicationController
     @questions = @test.questions
   end
 
-  def show
-    @question
-  end
-
   def new
     @question = Question.new
   end
 
   def edit
-    @question
   end
 
   def create

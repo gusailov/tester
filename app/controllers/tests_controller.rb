@@ -6,7 +6,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    @test
   end
 
   def new
@@ -14,7 +13,6 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @test
   end
 
   def create
