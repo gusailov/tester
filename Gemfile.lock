@@ -171,6 +171,7 @@ GEM
       rubocop (>= 0.90.0, < 2.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.0)
+    rufo (0.12.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -236,12 +237,12 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.2, >= 6.1.2.1)
   rubocop-rails
+  rufo
   sass-rails (>= 6)
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
-  tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
