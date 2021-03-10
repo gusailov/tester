@@ -1,15 +1,19 @@
-<h3>Name: <%= link_to "#{user.name}", user_path(user) %> <%=  %> </h3>
+<h3>Name: <%= link_to "#{user.name}", user_path(user) %> </h3>
 
-<h4>Author of Tests: </h4>
+<h4>Author of Tests:</h4>
+  <table style = "border-collapse: collapse; text-align: center;">
 
-<table style = "border-collapse: collapse; text-align: center;">
-  <%= render "/shared/tests_table_head" %>
-  <%= render user.author_tests %>
-</table>
+    <%= render "/shared/tests_table_head" %>
 
-<h4>Passing Tests: </h4>
+    <%= render user.author_tests %>
 
-<table style = "border-collapse: collapse; text-align: center;">
-  <%= render "/shared/tests_table_head" %>
-  <%= render user.tests %>
-</table>
+  </table>
+
+<h4>Passing Tests:</h4>
+  <table style = "border-collapse: collapse; text-align: center;">
+    
+    <%= render "/shared/tests_table_head" %>
+    
+    <%= render user.tests %>
+  
+  </table>

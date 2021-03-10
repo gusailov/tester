@@ -1,5 +1,6 @@
 <%= form_with model: @category, local: true do |form| %>
- <%= render "/shared/errors", resource: @category %> 
+  
+  <%= render "/shared/errors", resource: @category %> 
   
   <p>
     <%= form.label :title %>
