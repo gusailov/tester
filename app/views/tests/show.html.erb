@@ -2,7 +2,7 @@
 
 <h3>Level: <%= @test.level %> </h3>
 
-<h3>Author: <%= link_to "#{User.find(@test.author_id).name}", user_path(@test.author_id) %></h3>
+<h3>Author: <%= link_to "#{@author.name}", user_path(@test.author_id) %></h3>
 
 <div>
   

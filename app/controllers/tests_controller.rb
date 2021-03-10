@@ -6,6 +6,7 @@ class TestsController < ApplicationController
   end
 
   def show
+    @author = User.find(@test.author_id)
   end
 
   def new
@@ -42,6 +43,9 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_author
   end
 
   def test_params

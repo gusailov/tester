@@ -1,19 +1,17 @@
 <h3>Name: <%= @user.name %> </h3>
 
 
-<h4>Tests: </h4>
+<h4>Author of Tests: </h4>
 
 <table style = "border-collapse: collapse; text-align: center;">
-  <tr >
-    <th style = "padding: 0.5rem;" >Title</th>
-    <th style = "padding: 0.5rem;">Category</th>
-    <th style = "padding: 0.5rem;">Level</th>
-    <th style = "padding: 0.5rem;">Questions Qty</th>
-    <th style = "padding: 0.5rem;" collspan="4" >Actions</th>
-  </tr>
-    <%= render @user.tests %>
+  <%= render "/shared/tests_table_head" %>
+  <%= render @user.author_tests %>
 </table>
-  
-<div>
-  <%= link_to "Add question", new_test_question_path(@user) %>  
-</div>  
+
+
+<h4>Passing Tests: </h4>
+
+<table style = "border-collapse: collapse; text-align: center;">
+  <%= render "/shared/tests_table_head" %>
+  <%= render @user.tests %>
+</table>
