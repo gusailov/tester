@@ -1,5 +1,7 @@
 <h3>Name: <%= link_to "#{user.name}", user_path(user) %> </h3>
 
+<%= link_to "edit #{user.name} profile", edit_user_path(user) %> 
+
 <h4>Author of Tests:</h4>
   <table style = "border-collapse: collapse; text-align: center;">
 
