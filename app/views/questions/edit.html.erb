@@ -1,2 +1,9 @@
 <%= question_header (@question) %> 
 <%= render "form" %>
+
+<span>  <%= link_to "Add Answer", new_question_answer_path(@question) %></span>  
+
+<h4>Answers:</h4>
+<ul>
+  <%= render @question.answers %>
+</ul>

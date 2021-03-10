@@ -5,17 +5,12 @@
 <h3>Author: <%= link_to "#{@author.name}", user_path(@test.author_id) %></h3>
 
 <div>
-  
-   
+  <%= link_to "Add question", new_test_question_path(@test) %>  
 </div> 
 
 <h4>Questions: </h4>
-
 <ul>
   <%= render @test.questions %>
 </ul>
 
-
-<div>
-  <%= link_to "Add question", new_test_question_path(@test) %>  
-</div>  
+ 
