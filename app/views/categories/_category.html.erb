@@ -1,5 +1,7 @@
 <h3>Category: <%= link_to "#{category.title}", category_path(category) %> </h3>
 
+<%= link_to "edit #{category.title}", edit_category_path(category) %> 
+
 <table style = "border-collapse: collapse; text-align: center;">
   <%= render "/shared/tests_table_head" %>
   <%= render category.tests %>
