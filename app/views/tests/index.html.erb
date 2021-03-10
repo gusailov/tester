@@ -1,6 +1,10 @@
-<table style = "border-collapse: collapse; text-align: center;">
+<div> <%= link_to "Create New Test", new_test_path %> </div>
+
+<table style = "border-collapse: collapse; text-align: center;margin: 1rem;">
     <%= render "/shared/tests_table_head" %>
     <%= render @tests %>
 </table>
+
+
 
 
