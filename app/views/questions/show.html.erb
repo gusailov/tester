@@ -1,7 +1,5 @@
-<%= question_header (@question) %> 
-
-<%= render "form" %>
-
+<%= render @question %>
+ 
 <%= link_to "Add Answer", new_question_answer_path(@question) %> 
 
 <h4>Answers:</h4>
@@ -9,4 +7,4 @@
     <%= render @question.answers %>
   </ul>
 
-<%= link_to "back to test", test_path(@question.test_id) %>
+<%= link_to "back to test", test_path(@question.test_id) %> 
