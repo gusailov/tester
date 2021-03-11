@@ -14,7 +14,7 @@
   
   <p>
     <%= form.label :level %>
-    <%= form.select :level, (0..10) %>
+    <%= form.select :level, Test::TEST_LEVELS.invert.to_a %>
   </p>
   
   <p>

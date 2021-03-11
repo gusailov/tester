@@ -1,6 +1,6 @@
 <h3>Test: <%= @test.title %> </h3>
 
-<h3>Level: <%= @test.level %> </h3>
+<h3>Level: <%= test_level(@test) %> </h3>
 
 <h3>Author: <%= link_to "#{@test.author.name}", user_path(@test.author_id) %></h3>
 

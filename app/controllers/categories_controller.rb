@@ -51,6 +51,6 @@ class CategoriesController < ApplicationController
   end
 
   def rescue_with_category_not_found
-    render plain: 'Category was not found'
+    render plain: 'Category was not found', status: :not_found
   end
 end

@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  TEST_LEVELS = { 0 => :easy, 1 => :elementary, 2 => :advanced, 3 => :hard, 4 => :hero }.freeze
+
   belongs_to :category
   belongs_to :author, class_name: 'User'
 
@@ -10,9 +12,11 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level, message: "title with this level already exists" }
 
-  scope :easy_level, -> { where(level: (0..1)) }
-  scope :medium_level, -> { where(level: (2..4)) }
-  scope :difficult_level, -> { where(level: (5..Float::INFINITY)) }
+  scope :easy, -> { where(level: 0) }
+  scope :elementary, -> { where(level: 1) }
+  scope :advanced, -> { where(level: 2) }
+  scope :hard, -> { where(level: 3) }
+  scope :hero, -> { where(level: (4..Float::INFINITY)) }
 
   scope :with_level, ->(level) { where(level: level) }
 
