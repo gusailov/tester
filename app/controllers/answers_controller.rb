@@ -2,6 +2,8 @@ class AnswersController < ApplicationController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
+
   def new
     @answer = @question.answers.new
   end
@@ -22,7 +24,7 @@ class AnswersController < ApplicationController
     if @answer.update(answer_params)
       redirect_to question_path(@answer.question_id)
     else
-      render :new
+      render :edit
     end
   end
 
@@ -44,5 +46,9 @@ class AnswersController < ApplicationController
 
   def answer_params
     params.require(:answer).permit(:body, :correct)
+  end
+
+  def rescue_with_answer_not_found
+    render plain: 'Answer was not found'
   end
 end

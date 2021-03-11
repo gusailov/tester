@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %i[show edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_user_not_found
+
   def index
     @users = User.all
   end
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      render :new
+      render :edit
     end
   end
 
@@ -46,5 +48,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :surname, :dob, :email, :role)
+  end
+
+  def rescue_with_user_not_found
+    render plain: 'User was not found'
   end
 end

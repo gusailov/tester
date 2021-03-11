@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :find_category, only: %i[show edit update]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_category_not_found
+
   def index
     @categories = Category.all
   end
@@ -28,8 +30,14 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to category_path(@category)
     else
-      render :new
+      render :edit
     end
+  end
+
+  def destroy
+    @category.destroy
+
+    redirect_to categories_path
   end
 
   private
@@ -40,5 +48,9 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:title)
+  end
+
+  def rescue_with_category_not_found
+    render plain: 'Category was not found'
   end
 end
