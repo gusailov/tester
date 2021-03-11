@@ -4,14 +4,11 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def new
-    @question = @test.questions.new
-  end
-
   def show
   end
 
-  def edit
+  def new
+    @question = @test.questions.new
   end
 
   def create
@@ -23,11 +20,14 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @question.update(question_params)
       redirect_to test_path(@question.test)
     else
-      render :new
+      render :edit
     end
   end
 

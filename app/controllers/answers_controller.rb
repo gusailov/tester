@@ -6,9 +6,6 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new
   end
 
-  def edit
-  end
-
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
@@ -16,6 +13,9 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update

@@ -5,14 +5,11 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def show
+  end
+
   def new
     @category = Category.new
-  end
-
-  def edit
-  end
-
-  def show
   end
 
   def create
@@ -22,6 +19,9 @@ class CategoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update
