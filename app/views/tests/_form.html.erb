@@ -9,12 +9,12 @@
 
   <p>
     <%= form.label :title %>
-    <%= form.text_field :title, id: :test_title %>
+    <%= form.text_field :title %>
   </p>
   
   <p>
     <%= form.label :level %>
-    <%= form.number_field :level, id: :test_level %>
+    <%= form.select :level, (0..10) %>
   </p>
   
   <p>
