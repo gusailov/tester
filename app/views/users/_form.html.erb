@@ -1,0 +1,32 @@
+<%= form_with model: @user, local: true do |form| %>
+  
+  <%= render "/shared/errors", resource: @user %> 
+  
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :surname %>
+    <%= form.text_field :surname %>
+  </p>
+
+  <p>
+    <%= form.label :dob %>
+    <%= date_select :user, :dob, start_year: 1930 %>
+  </p>
+  
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+  </p>
+
+  <p><%= form.submit %></p>
+
+<% end %>
