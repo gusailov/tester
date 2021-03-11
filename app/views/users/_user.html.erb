@@ -7,17 +7,13 @@
 <h4>Author of Tests:</h4>
   <table style = "border-collapse: collapse; text-align: center;">
 
-    <%= render "/shared/tests_table_head" %>
-
-    <%= render user.author_tests %>
+    <%= render "/tests/table", tests: user.author_tests %> 
 
   </table>
 
 <h4>Passing Tests:</h4>
   <table style = "border-collapse: collapse; text-align: center;">
     
-    <%= render "/shared/tests_table_head" %>
-    
-    <%= render user.tests %>
-      
+    <%= render "/tests/table", tests: user.tests %> 
+
   </table>

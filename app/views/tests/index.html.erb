@@ -2,8 +2,6 @@
 
 <table style = "border-collapse: collapse; text-align: center;margin: 1rem;">
   
-  <%= render "/shared/tests_table_head" %>
-  
-  <%= render @tests %>
+  <%= render "table", tests: @tests %>
 
 </table>

@@ -4,7 +4,4 @@
 
 <span> <%= link_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" } %> |</span>
 
-<table style = "border-collapse: collapse; text-align: center;">
-  <%= render "/shared/tests_table_head" %>
-  <%= render category.tests %>
-</table>
+<%= render "/tests/table", tests: category.tests %> 
