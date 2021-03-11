@@ -12,13 +12,13 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level, message: "title with this level already exists" }
 
-  scope :easy, -> { where(level: 0) }
-  scope :elementary, -> { where(level: 1) }
-  scope :advanced, -> { where(level: 2) }
-  scope :hard, -> { where(level: 3) }
-  scope :hero, -> { where(level: (4..Float::INFINITY)) }
-
   scope :with_level, ->(level) { where(level: level) }
+
+  scope :easy, -> { with_level(0) }
+  scope :elementary, -> { with_level(1) }
+  scope :advanced, -> { with_level(2) }
+  scope :hard, -> { with_level(3) }
+  scope :hero, -> { with_level(4..Float::INFINITY) }
 
   scope :by_category, ->(title) { joins(:category).where(categories: { title: title }) }
 
