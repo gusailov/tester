@@ -8,7 +8,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    @author = User.find(@test.author_id)
   end
 
   def new
