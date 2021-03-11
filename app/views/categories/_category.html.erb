@@ -1,6 +1,8 @@
-<h3>Category: <%= link_to "#{category.title}", category_path(category) %> </h3>
+<h3>Category: <%= link_to category.title, category_path(category) %> </h3>
 
-<%= link_to "edit #{category.title}", edit_category_path(category) %> 
+<span> <%= link_to "Edit", edit_category_path(category) %> |</span>
+
+<span> <%= link_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" } %> |</span>
 
 <table style = "border-collapse: collapse; text-align: center;">
   <%= render "/shared/tests_table_head" %>
