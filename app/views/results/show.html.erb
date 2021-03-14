@@ -1,1 +1,20 @@
-<h1>Pass the test </h1>
+<h1>Passing the <%= @result.test.title %> Test</h1>
+
+<p>
+  <%= @result.current_question.body %>
+</p>
+
+<% if flash[:notice] %>
+  <h1> <%= flash[:notice] %> </h1>
+<% end %>
+
+<%= form_with url: result_path(@result), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers,
+                                  :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <%= form.submit "Next" %>
+<% end %>

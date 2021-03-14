@@ -1,3 +1,6 @@
-<div> <%= link_to "Create New Test", new_test_path %> </div>
-
-<%= render "table", tests: @tests %>
+<% if flash[:notice] %>
+  <h1> <%= flash[:notice] %> </h1>
+<% else %>
+  <div> <%= link_to "Create New Test", new_test_path %> </div>
+  <%= render "table", tests: @tests %>
+<% end %>

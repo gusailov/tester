@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :find_user, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
-
+  rescue_from ActiveRecord::RecordInvalid, with: :rescue_with_pass_this_test_twice
   def index
     @tests = Test.all
   end
@@ -53,7 +53,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = User.first
+    @user = User.last
   end
 
   def test_params
@@ -62,5 +62,10 @@ class TestsController < ApplicationController
 
   def rescue_with_test_not_found
     render plain: 'Test was not found', status: :not_found
+  end
+
+  def rescue_with_pass_this_test_twice
+    flash[:notice] = "you cannot pass this test twice"
+    redirect_to tests_path
   end
 end

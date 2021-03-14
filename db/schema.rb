@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_111238) do
     t.boolean "completed", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "correct_question", default: 0, null: false
+    t.integer "correct_questions", default: 0, null: false
     t.integer "current_question_id"
     t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"

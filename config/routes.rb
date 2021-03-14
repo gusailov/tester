@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :results, only: %i[index show] do
     member do
-      get :results
+      get :result
     end
   end
 end
