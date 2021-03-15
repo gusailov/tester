@@ -5,9 +5,6 @@ class TestPassagesController < ApplicationController
   def show
   end
 
-  def result
-  end
-
   def update
     @test_passage.accept!(params[:answer_ids])
 
@@ -16,6 +13,9 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def result
   end
 
   private
