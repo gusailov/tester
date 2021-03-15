@@ -1,5 +1,1 @@
-<% if @result.success_rate >= 85 %>
-  <h1> Test <%= @result.test.title %> completed with <span class="success"> <%= @result.success_rate %>% </span> result</h1>
-<% else %>
-  <h1> Test <%= @result.test.title %> NOT completed with <span class="failure"> <%= @result.success_rate %>% </span> result</h1>
-<% end %>
+<h1> <%= success_message(@result) %> <span  class= "<%= @result.success? ? "success" : "failure" %>" > <%= @result.success_rate %>% </span> result</h1>

@@ -21,7 +21,11 @@ class Result < ApplicationRecord
   end
 
   def success_rate
-    (self.correct_questions / test.questions.count) * 100
+    (self.correct_questions * 100 / test.questions.count).to_i
+  end
+
+  def success?
+    success_rate >= 85
   end
 
   private
