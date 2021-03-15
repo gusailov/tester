@@ -6,6 +6,7 @@ class Result < ApplicationRecord
   validates :user_id, uniqueness: { scope: :test_id, message: "you cannot pass this test twice" }
 
   before_validation :before_validation_set_first_question, on: :create
+  before_save :before_save_set_next_question
 
   def completed?
     current_question.nil?
@@ -16,7 +17,6 @@ class Result < ApplicationRecord
       self.correct_questions += 1
     end
 
-    self.current_question = next_question
     save!
   end
 
@@ -35,7 +35,7 @@ class Result < ApplicationRecord
     current_question.answers.correct_answer
   end
 
-  def next_question
-    test.questions.order(:id).where('id>?', current_question.id).first
+  def before_save_set_next_question
+    self.current_question = test.questions.order(:id).where('id>?', current_question.id).first
   end
 end
