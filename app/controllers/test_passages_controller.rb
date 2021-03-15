@@ -5,9 +5,6 @@ class TestPassagesController < ApplicationController
   def show
   end
 
-  def result
-  end
-
   def update
     @test_passage.accept!(params[:answer_ids])
 
@@ -18,6 +15,9 @@ class TestPassagesController < ApplicationController
     end
   end
 
+  def result
+  end
+
   private
 
   def set_test_passage
@@ -26,10 +26,10 @@ class TestPassagesController < ApplicationController
 
   def validate_answer_ids
     if params[:answer_ids].nil?
-      flash[:notice] = "You need something to choose"
+      flash.now[:notice] = "You need something to choose"
       render :show
     else
-      flash[:notice] = nil
+      flash.now[:notice] = nil
     end
   end
 end
