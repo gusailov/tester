@@ -1,1 +1,8 @@
-<h1> <%= @result.test.title %> completed</h1>
+<h1> Test <%= @result.test.title %> completed</h1>
+
+<% if @result.success? %>
+  <div>  "good" </div>
+<% else %>
+  <div>  "bad" </div>
+ 
+<% end %>
