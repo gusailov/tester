@@ -4,13 +4,16 @@
   <%= @result.current_question.body %>
 </p>
 
+<p>
+  Question <%= @result.test.questions.index(@result.current_question) + 1 %> / from <%= @result.test.questions.count %> questions
+</p>
+
 <% if flash[:notice] %>
   <h1> <%= flash[:notice] %> </h1>
 <% end %>
 
 <%= form_with url: result_path(@result), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers,
-                                  :id, :body, include_hidden: false do |b| %>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label %>
