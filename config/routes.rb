@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, :users, :results
+  resources :categories, :users, :test_passages
 
-  resources :results, only: %i[index show] do
+  resources :test_passages, only: %i[index show] do
     member do
       get :result
     end

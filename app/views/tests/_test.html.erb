@@ -16,5 +16,5 @@
     <%= link_to "Delete", test_path(test), method: :delete, data: { confirm: "Are you sure?" } %>
   </td>
 
-  <td style = "padding: 0.5rem;"><%= button_to "Start", start_test_path(test) %></td>
+  <td style = "padding: 0.5rem;"><%= button_to "Start", start_test_path(test), disabled: test.questions.empty? %></td>
 </tr>
