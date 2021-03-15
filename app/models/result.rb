@@ -20,8 +20,8 @@ class Result < ApplicationRecord
     save!
   end
 
-  def success?
-    (self.correct_questions / test.questions.count) * 100 >= 85
+  def success_rate
+    (self.correct_questions / test.questions.count) * 100
   end
 
   private

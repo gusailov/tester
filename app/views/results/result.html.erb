@@ -1,8 +1,5 @@
-<h1> Test <%= @result.test.title %> completed</h1>
-
-<% if @result.success? %>
-  <div>  "good" </div>
+<% if @result.success_rate >= 85 %>
+  <h1> Test <%= @result.test.title %> completed with <span class="success"> <%= @result.success_rate %>% </span> result</h1>
 <% else %>
-  <div>  "bad" </div>
- 
+  <h1> Test <%= @result.test.title %> NOT completed with <span class="failure"> <%= @result.success_rate %>% </span> result</h1>
 <% end %>
