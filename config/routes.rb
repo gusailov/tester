@@ -4,10 +4,20 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   resources :tests do
-    resources :questions, shallow: true  do
+    resources :questions, shallow: true do
       resources :answers, shallow: true
+    end
+
+    member do
+      post :start
     end
   end
 
-  resources :categories, :users
+  resources :categories, :users, :test_passages
+
+  resources :test_passages, only: %i[index show] do
+    member do
+      get :result
+    end
+  end
 end
