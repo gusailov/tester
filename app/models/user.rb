@@ -5,6 +5,9 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
+  has_secure_password
+  validates :password, presence: true
+
   def test_passage(test)
     test_passages.order(created_at: :desc).find_by(test_id: test.id)
   end
