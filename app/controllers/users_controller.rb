@@ -47,7 +47,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :surname, :dob, :email, :role)
+    params.require(:user)
+          .permit(:name, :surname, :dob, :email, :role, :password, :password_confirmation)
   end
 
   def rescue_with_user_not_found

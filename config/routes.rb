@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
+  get :signup, to: 'users#new'
+
   resources :tests do
     resources :questions, shallow: true do
       resources :answers, shallow: true
