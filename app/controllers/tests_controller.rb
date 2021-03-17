@@ -54,7 +54,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = User.last
+    @user = current_user
   end
 
   def test_params
