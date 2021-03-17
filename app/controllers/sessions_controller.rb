@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  
   def new
   end
 
@@ -10,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      redirect_to login_path, alert: 'You are not logged in SessionsController'
+      redirect_to login_path, alert: 'You are not logged in'
     end
   end
 end
