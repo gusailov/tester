@@ -53,6 +53,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    redirect_to root_path, alert: 'Question was not found', status: :not_found
+    redirect_to root_path, alert: 'Question was not found'
   end
 end

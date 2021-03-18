@@ -10,7 +10,7 @@ module ApplicationHelper
   def flash_message
     if flash.present?
       flash.map do |type, msg|
-        tag.p(msg, class: "flash #{type}")
+        tag.div(msg, class: "flash #{type}")
       end.join().html_safe
     end
   end

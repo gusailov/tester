@@ -1,4 +1,6 @@
 .flash {
+  align-self: center;
+  z-index: 10;
   border: 1px solid;
   padding: 0.5rem;
   &.alert {
