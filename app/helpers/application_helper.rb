@@ -7,9 +7,9 @@ module ApplicationHelper
     link_to "#{repo.capitalize}", "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message
-    return unless flash[:alert]
+  def flash_message(key)
+    return unless flash[key]
 
-    tag.p(flash[:alert], class: "flash alert")
+    tag.p(flash[key], class: "flash #{key}")
   end
 end

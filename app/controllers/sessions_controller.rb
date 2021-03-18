@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
 
     if user&.authenticate(params[:password])
+      url = cookies[:return_to] || root_path
       session[:user_id] = user.id
-      redirect_to(cookies[:return_to])
+      redirect_to(url)
     else
       redirect_to login_path, alert: 'You are not logged in'
     end
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
+    cookies.clear
     @current_user = nil
     redirect_to login_path, alert: 'You are logged out'
   end
