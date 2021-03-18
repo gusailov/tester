@@ -1,7 +1,10 @@
 .flash {
   border: 1px solid;
   padding: 0.5rem;
-}
-.flash.alert {
-  border-color: red;
+  &.alert {
+    border-color: red;
+  }
+  &.notice {
+    border-color: rgb(40, 167, 78);
+  }
 }
