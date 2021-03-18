@@ -1,11 +1,4 @@
 <nav>
-  <% unless logged_in? %>
-  <div></div>
-  <div>
-    <div> <%= link_to "Login", login_path %> |</div>
-    <div> <%= link_to "SignUp", signup_path %> </div>
-  </div>
-  <% end %>
   <% if logged_in? %> 
     <div>
       <div> <%= link_to "TESTER", tests_path %> |</div>
@@ -15,6 +8,12 @@
     <div>
       <div> Welcome: <%= link_to current_user.email, user_path(current_user) %> </div>
       <div> <%= link_to "Log Out", logout_path, method: :delete %> </div>
+    </div>
+  <% else %>
+    <div></div>
+    <div>
+            <div> <%= link_to "Login", login_path %> </div>
+      <div> <%= link_to "SignUp", signup_path %> </div>
     </div>
   <% end %> 
 </nav>

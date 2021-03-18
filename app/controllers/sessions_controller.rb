@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to(cookies[:return_to])
     else
       redirect_to login_path, alert: 'You are not logged in'
     end

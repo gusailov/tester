@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to login_path, alert: 'You are not logged in'
     end
-
+    cookies[:return_to] = request.fullpath
     cookies[:email] = {
       value: current_user&.email,
       expires: 1.month
