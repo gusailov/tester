@@ -1,5 +1,4 @@
 class TestPassagesController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show result update]
   before_action :validate_answer_ids, only: %i[update]
 
@@ -29,8 +28,6 @@ class TestPassagesController < ApplicationController
     if params[:answer_ids].nil?
       flash.now[:notice] = "You need something to choose"
       render :show
-    else
-      flash[:notice] = nil
     end
   end
 end
