@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
 
     if user&.authenticate(params[:password])
-      url = cookies[:return_to] || root_path
       session[:user_id] = user.id
-      redirect_to(url)
+      redirect_to cookies[:return_to] || root_path
     else
-      redirect_to login_path, alert: 'You are not logged in'
+      flash.now[:alert] = 'You are not logged in'
+      render :new
     end
   end
 
