@@ -54,6 +54,6 @@ class UsersController < ApplicationController
   end
 
   def rescue_with_user_not_found
-    render plain: 'User was not found', status: :not_found
+    redirect_to root_path, alert: 'User was not found', status: :not_found
   end
 end

@@ -49,6 +49,6 @@ class AnswersController < ApplicationController
   end
 
   def rescue_with_answer_not_found
-    render plain: 'Answer was not found', status: :not_found
+    redirect_to root_path, alert: 'Answer was not found', status: :not_found
   end
 end

@@ -16,8 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    cookies.clear
-    @current_user = nil
     redirect_to login_path, alert: 'You are logged out'
   end
 end
