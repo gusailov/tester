@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: %i[new create]
+  skip_before_action :authenticate_user!, only: %i[new create]
   before_action :find_user, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_user_not_found
