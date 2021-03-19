@@ -28,8 +28,6 @@ class TestPassagesController < ApplicationController
     if params[:answer_ids].nil?
       flash.now[:notice] = "You need something to choose"
       render :show
-    else
-      flash[:notice] = nil
     end
   end
 end

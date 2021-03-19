@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, only: %i[show edit update destroy] 
+  before_action :find_category, only: %i[show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_category_not_found
 
@@ -51,6 +51,6 @@ class CategoriesController < ApplicationController
   end
 
   def rescue_with_category_not_found
-    render plain: 'Category was not found', status: :not_found
+    redirect_to root_path, alert: 'Category was not found'
   end
 end

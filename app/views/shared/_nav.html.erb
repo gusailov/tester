@@ -1,7 +1,19 @@
 <nav>
-  <h3>
-    <span> <%= link_to "All Tests", tests_path %> |</span>
-    <span> <%= link_to "All Users", users_path %> |</span>
-    <span> <%= link_to "Categorires", categories_path %> </span>
-  </h3>
+  <% if logged_in? %> 
+    <div>
+      <div> <%= link_to "TESTER", root_path %> |</div>
+      <div> <%= link_to "All Users", users_path %> |</div>
+      <div> <%= link_to "Categorires", categories_path %> </div>
+    </div>
+    <div>
+      <div> Welcome: <%= link_to current_user.email, user_path(current_user) %> </div>
+      <div> <%= link_to "Log Out", logout_path, method: :delete %> </div>
+    </div>
+  <% else %>
+    <div></div>
+    <div>
+      <div> <%= link_to "Login", login_path %> </div>
+      <div> <%= link_to "SignUp", signup_path %> </div>
+    </div>
+  <% end %> 
 </nav>
