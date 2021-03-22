@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path_names: { sign_in: :login, sign_out: :logout }
 
-  resources :categories, :test_passages
+  resources :categories, :users, :test_passages
 
   resources :tests do
     resources :questions, shallow: true do
