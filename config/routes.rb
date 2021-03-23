@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :categories, :users, :test_passages
 
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true do
       resources :answers, shallow: true
     end
@@ -21,5 +21,9 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
 end
