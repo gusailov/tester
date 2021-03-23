@@ -1,15 +1,8 @@
-<h3>Name: <%= link_to user.name, user_path(user) %> </h3>
-
-<h4>Author of Tests:</h4>
-  <table style = "border-collapse: collapse; text-align: center;">
-
-    <%= render "/tests/table", tests: user.author_tests %> 
-
-  </table>
+<h3>Name: <%= link_to @user.name, user_path(@user) %> </h3>
 
 <h4>Passing Tests:</h4>
   <table style = "border-collapse: collapse; text-align: center;">
     
-    <%= render "/tests/table", tests: user.tests %> 
+    <%= render "/tests/table", tests: @user.tests %> 
 
   </table>
