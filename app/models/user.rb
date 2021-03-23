@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  self.inheritance_column = 'role'
   devise :database_authenticatable,
          :registerable,
          :recoverable,
