@@ -2,7 +2,7 @@
 
 <h3>Level: <%= test_level(@test) %> </h3>
 
-<h3>Author: <%= link_to "#{@test.author.name}", admin_user_path(@test.author_id) %></h3>
+<h3>Author: <%= @test.author.name %></h3>
 
 <div>
   <%= link_to "Add question", new_admin_test_question_path(@test) %>  
