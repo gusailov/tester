@@ -10,10 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    set_flash_message! :notice, :signed_up, :username => resource.username if is_flashing_format?
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
