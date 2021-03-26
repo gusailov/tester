@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
 
   devise_for :users, path_names: { sign_in: :login, sign_out: :logout },
-                     controllers: { sessions: "users/sessions" }
+                     controllers: { sessions: :sessions }
 
   resources :test_passages
 
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    root to: '/admin/tests#index'
     resources :categories
     resources :tests do
       resources :questions, shallow: true do

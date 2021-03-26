@@ -1,8 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: %i[show edit update destroy]
 
-  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_category_not_found
-
   def index
     @categories = Category.all
   end
@@ -49,8 +47,4 @@ class Admin::CategoriesController < Admin::BaseController
   def category_params
     params.require(:category).permit(:title)
   end
-
-  # def rescue_with_category_not_found
-  #   redirect_to root_path, alert: 'Category was not found'
-  # end
 end
