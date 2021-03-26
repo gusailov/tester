@@ -2,7 +2,7 @@ class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[edit update destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
 
   def new
     @answer = @question.answers.new
@@ -48,7 +48,7 @@ class Admin::AnswersController < Admin::BaseController
     params.require(:answer).permit(:body, :correct)
   end
 
-  def rescue_with_answer_not_found
-    redirect_to root_path, alert: 'Answer was not found'
-  end
+  # def rescue_with_answer_not_found
+  #   redirect_to root_path, alert: 'Answer was not found'
+  # end
 end
