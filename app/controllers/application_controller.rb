@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def record_not_found(e)
-    redirect_to root_path, alert: "#{e.message}"
+    redirect_back fallback_location: root_path, alert: "#{e.message}"
   end
 end
