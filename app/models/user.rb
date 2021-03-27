@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true,
                     format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :name, presence: true
 
   def test_passage(test)
     test_passages.order(created_at: :desc).find_by(test_id: test.id)
