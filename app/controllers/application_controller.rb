@@ -1,28 +1,20 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
   protect_from_forgery with: :exception
 
-  helper_method :current_user,
-                :logged_in?
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
-  def authenticate_user!
-    unless current_user
-      redirect_to login_path, alert: 'You are not logged in'
-    end
-    cookies[:return_to] = request.fullpath
-    cookies[:email] = {
-      value: current_user&.email,
-      expires: 1.month
-    }
+  def configure_permitted_parameters
+    registration_params = %i[name surname role dob(1i) dob(2i) dob(3i)]
+    devise_parameter_sanitizer.permit(:sign_up, keys: registration_params)
+    devise_parameter_sanitizer.permit(:edit, keys: registration_params)
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def record_not_found(e)
+    redirect_back fallback_location: root_path, alert: "#{e.message}"
   end
 end

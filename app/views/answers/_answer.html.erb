@@ -1,8 +1,0 @@
-<li> 
-  <%= answer.body %> 
-  <%= "Correct" if answer.correct? %> 
-</li>
-
-<span> <%= link_to "Edit", edit_answer_path(answer) %> |</span>  
-
-<span> <%= link_to "Delete", answer_path(answer), method: :delete, data: { confirm: "Are you sure?" } %> |</span>

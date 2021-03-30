@@ -1,24 +1,17 @@
-class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[new create]
+class SessionsController < Devise::SessionsController
+  after_action :greeting, only: :create
 
-  def new
-    redirect_to root_path if logged_in?
+  private
+
+  def greeting
+    flash[:notice] = "Hello, #{current_user.name}"
   end
 
-  def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to cookies[:return_to] || root_path
+  def after_sign_in_path_for(current_user)
+    if current_user.admin?
+      admin_root_path
     else
-      flash.now[:alert] = 'You are not logged in'
-      render :new
+      stored_location_for(current_user) || root_path
     end
-  end
-
-  def destroy
-    session.delete(:user_id)
-    redirect_to login_path, alert: 'You are logged out'
   end
 end

@@ -1,0 +1,12 @@
+<%= question_header(@question) %> 
+
+<%= render "form" %>
+
+<%= link_to "Add Answer", new_admin_question_answer_path(@question) %> 
+
+<h4>Answers:</h4>
+  <ul>
+    <%= render @question.answers %>
+  </ul>
+
+<%= link_to "back to test", admin_test_path(@question.test_id) %>
