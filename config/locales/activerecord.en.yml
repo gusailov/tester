@@ -2,6 +2,17 @@ en:
   activerecord:
     models:
       test: "Test"
+
     attributes:
       test:
         title: "Title"
+        category: "Category"
+        author: "Author"
+        level: "Level"
+        questions: "Questions"
+        users: "Users"
+        test_passages: "Test passages"
+    errors:
+      messages:
+        blank: "can't be blank"
+        taken: "with this level already exists"

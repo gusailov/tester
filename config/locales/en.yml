@@ -11,14 +11,47 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-
+  shared:
+    nav:
+      title: "TESTER"
+      admin_panel: "Admin Panel"
   tests:
     index:
       header: "Tests"
+    table:
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions_qty: "Questions Qty"
+    test:
+      start: "Start test"
 
+  test_passages:
+    update:
+      validate: "You need something to choose"
   admin:
+    nav:
+      title: "TESTER"
+      categorires: "Categorires"
+      create_new_test: "Create New Test"
+      admin_panel: "Admin Panel"
+      welcome: "Welcome"
+      log_out: "Log Out"
     tests:
       create:
         success: "Test successfully created"
       index:
         header: "Tests"
+      show:
+        add_question: "Add question"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you shure?"
+      table:
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions_qty: "Questions Qty"
+        actions: "Actions"

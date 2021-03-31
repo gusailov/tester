@@ -8,5 +8,5 @@
 
   <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.questions.count %></td>
 
-    <td style = "padding: 0.5rem;"><%= button_to "Start", start_test_path(test), disabled: test.questions.empty? %></td>
+    <td style = "padding: 0.5rem;"><%= button_to t(".start"), start_test_path(test), disabled: test.questions.empty? %></td>
 </tr>

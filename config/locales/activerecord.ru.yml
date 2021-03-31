@@ -2,9 +2,17 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
     attributes:
       test:
         title: "Название"
+        category: "Категория"
+        author: "Автор"
+        level: "Уровень"
+        questions: "Вопросы"
+        users: "Пользователи"
+        test_passages: "Пройденные тесты"
     errors:
       messages:
         blank: "не может быть пустым"
+        taken: "теста с таким уровнем уже есть"

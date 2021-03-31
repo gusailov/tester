@@ -1,14 +1,14 @@
-<h3>Test: <%= @test.title %> </h3>
+<h3><%= Test.human_attribute_name(:title) %>: <%= @test.title %> </h3>
 
-<h3>Level: <%= test_level(@test) %> </h3>
+<h3><%= Test.human_attribute_name(:level) %>: <%= test_level(@test) %> </h3>
 
-<h3>Author: <%= @test.author.name %></h3>
+<h3><%= Test.human_attribute_name(:author) %>: <%= @test.author.name %></h3>
 
 <div>
-  <%= link_to "Add question", new_admin_test_question_path(@test) %>  
+  <%= link_to t(".add_question"), new_admin_test_question_path(@test) %>  
 </div> 
 
-<h4>Questions: </h4>
+<h4><%= Test.human_attribute_name(:questions) %>: </h4>
   <ol>
     <%= render @test.questions %>
   </ol>

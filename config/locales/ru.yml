@@ -11,14 +11,51 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+  shared:
+    nav:
+      title: "ТЕСТЕР"
+      admin_panel: "Панель Администратора"
+      welcome: "Добро пожаловать"
+      log_out: "Выход"
 
   tests:
     index:
       header: "Тесты"
+    table:
+      title: "Название"
+      category: "Категория"
+      level: "Уровень"
+      questions_qty: "Количество вопросов"
+    test:
+      start: "Начать тест"
+
+  test_passages:
+    update:
+      validate: "Нужно что-нибудь выбрать"
 
   admin:
+    nav:
+      title: "ТЕСТЕР"
+      categorires: "Категории"
+      create_new_test: "Создать новый тест"
+      admin_panel: "Панель Администратора"
+      welcome: "Добро пожаловать"
+      log_out: "Выход"
     tests:
       create:
         success: "Тест создан успешно"
       index:
         header: "Тесты"
+      show:
+        add_question: "Добавить вопрос"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirmation: "Вы уверены?"
+      table:
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+        questions_qty: "Количество вопросов"
+        actions: "Действия"

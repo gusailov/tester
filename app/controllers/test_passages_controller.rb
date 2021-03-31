@@ -27,7 +27,7 @@ class TestPassagesController < ApplicationController
 
   def validate_answer_ids
     if params[:answer_ids].nil?
-      flash.now[:notice] = "You need something to choose"
+      flash.now[:notice] = t('.validate')
       render :show
     end
   end
