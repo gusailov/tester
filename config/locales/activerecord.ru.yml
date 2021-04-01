@@ -3,6 +3,7 @@ ru:
     models:
       test: "Тест"
       question: "Вопрос"
+      category: "Категория"
     attributes:
       test:
         title: "Название"
@@ -12,6 +13,8 @@ ru:
         questions: "Вопросы"
         users: "Пользователи"
         test_passages: "Пройденные тесты"
+      question:
+        answers: "Ответы"
     errors:
       messages:
         blank: "не может быть пустым"

@@ -1,5 +1,11 @@
 ru:
   hello: "Привет мир"
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  new: "Новый"
+  confirmation: "Вы уверены?"
+  detected: "Найдено"
 
   helpers:
     submit:
@@ -48,14 +54,16 @@ ru:
         header: "Тесты"
       show:
         add_question: "Добавить вопрос"
-      test:
-        show: "Показать"
-        edit: "Редактировать"
-        delete: "Удалить"
-        confirmation: "Вы уверены?"
       table:
         title: "Название"
         category: "Категория"
         level: "Уровень"
         questions_qty: "Количество вопросов"
         actions: "Действия"
+    questions:
+      answers_list:
+        add_answer: "Добавить ответ"
+        back_to_test: "Вернутся к тесту"
+    categories:
+      index:
+        add_new_category: "Добавить категорию"

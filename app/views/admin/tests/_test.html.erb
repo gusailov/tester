@@ -9,15 +9,15 @@
   <td style = "border-right: 1px solid black;padding: 0.5rem;"><%= test.questions.count %></td>
 
   <td style = "border-right: 1px solid black;padding: 0.5rem;">
-    <%= link_to t(".show"), admin_test_path(test) %>
+    <%= link_to t("show"), admin_test_path(test) %>
   </td>
 
   <td style = "border-right: 1px solid black;padding: 0.5rem;">
-    <%= link_to t(".edit"), edit_admin_test_path(test) %>
+    <%= link_to t("edit"), edit_admin_test_path(test) %>
   </td>
 
   <td style = "border-right: 1px solid black;padding: 0.5rem;">
-    <%= link_to t(".delete"), admin_test_path(test), method: :delete, data: { confirm: t(".confirmation") } %>
+    <%= link_to t("delete"), admin_test_path(test), method: :delete, data: { confirm: t("confirmation") } %>
   </td>
 
 </tr>

@@ -1,5 +1,11 @@
 en:
   hello: "Hello world"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  new: "New"
+  confirmation: "Are you shure?"
+  detected: "Detected"
 
   helpers:
     submit:
@@ -44,14 +50,13 @@ en:
         header: "Tests"
       show:
         add_question: "Add question"
-      test:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirmation: "Are you shure?"
       table:
         title: "Title"
         category: "Category"
         level: "Level"
         questions_qty: "Questions Qty"
         actions: "Actions"
+    questions:
+      show:
+        add_answer: "Add Answer"
+        back_to_test: "Back to Test"

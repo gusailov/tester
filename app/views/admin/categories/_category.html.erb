@@ -1,7 +1,7 @@
-<h3>Category: <%= link_to category.title, admin_category_path(category) %> </h3>
+<h3><%= Category.model_name.human %> : <%= link_to category.title, admin_category_path(category) %> </h3>
 
-<span> <%= link_to "Edit", edit_admin_category_path(category) %> |</span>
+<span> <%= link_to t("edit"), edit_admin_category_path(category) %> |</span>
 
-<span> <%= link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" } %> |</span>
+<span> <%= link_to t("delete"), admin_category_path(category), method: :delete, data: { confirm: t("confirmation") } %> |</span>
 
 <%= render "/tests/table", tests: category.tests %> 

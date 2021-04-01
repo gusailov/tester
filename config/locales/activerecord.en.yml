@@ -2,6 +2,8 @@ en:
   activerecord:
     models:
       test: "Test"
+      question: "Question"
+      category: "Category"
 
     attributes:
       test:
@@ -12,6 +14,8 @@ en:
         questions: "Questions"
         users: "Users"
         test_passages: "Test passages"
+      question:
+        answers: "Answers"
     errors:
       messages:
         blank: "can't be blank"
