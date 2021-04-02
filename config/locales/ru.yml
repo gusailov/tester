@@ -19,6 +19,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+    select:
+      prompt: "Сделайте выбор"
   shared:
     nav:
       title: "ТЕСТЕР"
