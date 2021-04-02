@@ -4,6 +4,7 @@ en:
       test: "Test"
       question: "Question"
       category: "Category"
+      test_passage: "Test passage"
 
     attributes:
       test:

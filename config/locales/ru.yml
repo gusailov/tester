@@ -54,6 +54,7 @@ ru:
     show:
       next: "Следующий вопрос"
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
+      answer_variants: "Варианты Ответов:"
 
   admin:
     nav:

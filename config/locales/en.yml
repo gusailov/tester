@@ -47,6 +47,7 @@ en:
     show:
       next: "Next question"
       question: "Question %{current_question}/ from %{questions_qty} questions"
+      answer_variants: "Answer Variants:"
   admin:
     nav:
       title: "TESTER"

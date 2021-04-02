@@ -4,6 +4,7 @@ ru:
       test: "Тест"
       question: "Вопрос"
       category: "Категория"
+      test_passage: "Прохождение теста"
     attributes:
       test:
         title: "Название"
