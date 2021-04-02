@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Tester</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +12,15 @@
   </head>
 
   <body>
-    <%= render "/shared/nav" %>
-    <%= render "/shared/flash" %>
+    <div class="container">
+      <%= render "/shared/nav" %>
+      <%= render "/shared/flash" %>
 
-    <div style=" padding-bottom: 2.5rem;">
-    <%= yield %>
+      <div style=" padding-bottom: 2.5rem;">
+      <%= yield %>
+      </div>
+
+      <%= render "/shared/footer" %>
     </div>
-    
-    <%= render "/shared/footer" %>
   </body>
 </html>

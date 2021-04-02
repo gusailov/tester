@@ -1,7 +1,7 @@
-<nav>
+<nav class="navbar navbar-light bg-light"> 
   <% if user_signed_in? %> 
     <div>
-      <div> <%= link_to t(".title"), root_path %> </div>
+      <div> <%= link_to t(".title"), root_path, class: "navbar-brand" %> </div>
     </div>
     <div>
       <div> <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> </div>

@@ -11,13 +11,15 @@
   </head>
 
   <body>
-    <%= render "/admin/nav" %>
-    <%= render "/shared/flash" %>
-
-    <div style=" padding-bottom: 2.5rem;">
-    <%= yield %>
+    <div class="container">
+      <%= render "/admin/nav" %>
+      <%= render "/shared/flash" %>
+  
+      <div style=" padding-bottom: 2.5rem;">
+      <%= yield %>
+      </div>
+      
+      <%= render "/shared/footer" %>
     </div>
-    
-    <%= render "/shared/footer" %>
   </body>
 </html>
