@@ -1,12 +1,12 @@
 <nav>
   <% if user_signed_in? %> 
     <div>
-      <div> <%= link_to "TESTER", root_path %> </div>
+      <div> <%= link_to t(".title"), root_path %> </div>
     </div>
     <div>
-      <div> <%= link_to "Admin Panel", admin_root_path if current_user.admin? %> </div>
-      <div> Welcome: <%= current_user.email %> </div>
-      <div> <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </div>
+      <div> <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> </div>
+      <div> <%= t(".welcome") %>: <%= current_user.email %> </div>
+      <div> <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %> </div>
     </div>
   <% end %> 
 </nav>

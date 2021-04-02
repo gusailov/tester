@@ -1,33 +1,82 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  new: "New"
+  confirmation: "Are you shure?"
+  detected: "Detected"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Please select"
+  shared:
+    nav:
+      title: "TESTER"
+      admin_panel: "Admin Panel"
+      welcome: "Welcome"
+      log_out: "Log out"
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  tests:
+    index:
+      header: "Tests"
+    table:
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions_qty: "Questions Qty"
+    test:
+      start: "Start test"
+  test_passages:
+    update:
+      validate: "You need something to choose"
+    result:
+      success: "Test %{title} completed successfully. Correct answers"
+      failure: "Test %{title} NOT completed. Correct answers"
+    show:
+      next: "Next question"
+      question: "Question %{current_question}/ from %{questions_qty} questions"
+      answer_variants: "Answer Variants:"
+  admin:
+    nav:
+      title: "TESTER"
+      categorires: "Categorires"
+      create_new_test: "Create New Test"
+      admin_panel: "Admin Panel"
+      welcome: "Welcome"
+      log_out: "Log Out"
+    tests:
+      create:
+        success: "Test successfully created"
+      index:
+        header: "Tests"
+      show:
+        add_question: "Add question"
+      table:
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions_qty: "Questions Qty"
+        actions: "Actions"
+    questions:
+      show:
+        add_answer: "Add Answer"
+        back_to_test: "Back to Test"
+    categories:
+      index:
+        add_new_category: "Add new category"
+    tests_mailer:
+      completed_test:
+        subject: "You just completed the test on TESTER"

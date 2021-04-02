@@ -1,7 +1,7 @@
 module QuestionsHelper
   def question_header(question)
-    action = question.new_record? ? "New" : "Edit"
+    action = question.new_record? ? t("new") : t("edit")
 
-    "#{action} #{question.test.title} Question"
+    "#{action} #{Question.model_name.human} #{question.test.title} "
   end
 end

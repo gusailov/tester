@@ -3,6 +3,6 @@
   <%= "Correct" if answer.correct? %> 
 </li>
 
-<span> <%= link_to "Edit", edit_admin_answer_path(answer) %> |</span>  
+<span> <%= link_to t("edit"), edit_admin_answer_path(answer) %> |</span>  
 
-<span> <%= link_to "Delete", admin_answer_path(answer), method: :delete, data: { confirm: "Are you sure?" } %> |</span>
+<span> <%= link_to t("delete"), admin_answer_path(answer), method: :delete, data: { confirm: t("confirmation") } %> |</span>

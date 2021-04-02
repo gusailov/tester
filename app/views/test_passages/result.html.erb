@@ -1,4 +1,4 @@
-<h1> <%= success_message(@test_passage) %> 
-  <span  class= "<%= @test_passage.success? ? "success" : "failure" %>" > 
-  <%= @test_passage.success_rate %>% </span> test passage
+<h1>
+  <%= t(".#{success_message(@test_passage)}", title: @test_passage.test.title) %>
+  <span  class= <%= success_message(@test_passage) %>> <%= @test_passage.success_rate %>% </span>
 </h1>

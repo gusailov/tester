@@ -1,2 +1,84 @@
 ru:
   hello: "Привет мир"
+  show: "Показать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  new: "Новый"
+  confirmation: "Вы уверены?"
+  detected: "Найдено"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Сделайте выбор"
+  shared:
+    nav:
+      title: "ТЕСТЕР"
+      admin_panel: "Панель Администратора"
+      welcome: "Добро пожаловать"
+      log_out: "Выход"
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+  tests:
+    index:
+      header: "Тесты"
+    table:
+      title: "Название"
+      category: "Категория"
+      level: "Уровень"
+      questions_qty: "Количество вопросов"
+    test:
+      start: "Начать тест"
+  test_passages:
+    update:
+      validate: "Нужно что-нибудь выбрать"
+    result:
+      success: "Тест %{title} пройден успешно. Правильных ответов"
+      failure: "Тест %{title} НЕ пройден. Правильных ответов"
+    show:
+      next: "Следующий вопрос"
+      question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
+      answer_variants: "Варианты Ответов:"
+  admin:
+    nav:
+      title: "ТЕСТЕР"
+      categorires: "Категории"
+      create_new_test: "Создать новый тест"
+      admin_panel: "Панель Администратора"
+      welcome: "Добро пожаловать"
+      log_out: "Выход"
+    tests:
+      create:
+        success: "Тест создан успешно"
+      index:
+        header: "Тесты"
+      show:
+        add_question: "Добавить вопрос"
+      table:
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+        questions_qty: "Количество вопросов"
+        actions: "Действия"
+    questions:
+      answers_list:
+        add_answer: "Добавить ответ"
+        back_to_test: "Вернутся к тесту"
+    categories:
+      index:
+        add_new_category: "Добавить категорию"
+    tests_mailer:
+      completed_test:
+        subject: "You just completed the test on TESTER"
