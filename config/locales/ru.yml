@@ -12,8 +12,6 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
-      test_passage:
-
     label:
       test:
         title: "Название"
@@ -33,7 +31,6 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-
   tests:
     index:
       header: "Тесты"
@@ -44,7 +41,6 @@ ru:
       questions_qty: "Количество вопросов"
     test:
       start: "Начать тест"
-
   test_passages:
     update:
       validate: "Нужно что-нибудь выбрать"
@@ -55,7 +51,6 @@ ru:
       next: "Следующий вопрос"
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
       answer_variants: "Варианты Ответов:"
-
   admin:
     nav:
       title: "ТЕСТЕР"
@@ -84,3 +79,6 @@ ru:
     categories:
       index:
         add_new_category: "Добавить категорию"
+    tests_mailer:
+      completed_test:
+        subject: "You just completed the test on TESTER"

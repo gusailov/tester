@@ -23,6 +23,8 @@ en:
     nav:
       title: "TESTER"
       admin_panel: "Admin Panel"
+      welcome: "Welcome"
+      log_out: "Log out"
     errors:
       header:
         one: "%{count} error detected"
@@ -37,7 +39,6 @@ en:
       questions_qty: "Questions Qty"
     test:
       start: "Start test"
-
   test_passages:
     update:
       validate: "You need something to choose"
@@ -73,3 +74,9 @@ en:
       show:
         add_answer: "Add Answer"
         back_to_test: "Back to Test"
+    categories:
+      index:
+        add_new_category: "Add new category"
+    tests_mailer:
+      completed_test:
+        subject: "You just completed the test on TESTER"
