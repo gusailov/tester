@@ -1,12 +1,10 @@
 <nav class="navbar navbar-light bg-light"> 
+  <div> <%= link_to t(".title"), root_path, class: "navbar-brand" %> </div>
   <% if user_signed_in? %> 
-    <div>
-      <div> <%= link_to t(".title"), root_path, class: "navbar-brand" %> </div>
-    </div>
-    <div>
-      <div> <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> </div>
-      <div> <%= t(".welcome") %>: <%= current_user.email %> </div>
-      <div> <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %> </div>
+    <div class="navbar-text">
+      <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> 
+      | <%= t(".welcome") %>, <b> <%= current_user.email %> </b> |
+      <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %>
     </div>
   <% end %> 
 </nav>

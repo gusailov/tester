@@ -1,22 +1,11 @@
-<footer style="
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 2rem;
-  text-align: center;
-  font-size: 1.2rem;
-  background-color: white;"
-  >
-
+<footer class="footer fixed-bottom text-center mt-auto py-3 bg-info">
   <span> <%= github_url("gusailov", "tester") %> |</span>
+    <span> 
+      <%= link_to "App for create&pass tests (training project)",
+                  "https://launchschool.com/books/ruby/read/introduction", target: :blank %>|
+    </span>
 
-  <span> 
-    <%= link_to "App for create&pass tests (training project)",
-                "https://launchschool.com/books/ruby/read/introduction", target: :blank %>|
-  </span>
-  
-  <span> <%= link_to "© Gusailov", "https://github.com/gusailov", target: :blank %> |</span>
+    <span> <%= link_to "© Gusailov", "https://github.com/gusailov", target: :blank %> |</span>
 
-  <span> <%= current_year %> </span>
-
+    <span> <%= current_year %> </span>
 </footer>

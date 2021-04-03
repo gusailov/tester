@@ -81,4 +81,8 @@ ru:
         add_new_category: "Добавить категорию"
     tests_mailer:
       completed_test:
-        subject: "You just completed the test on TESTER"
+        subject: "Вы только что прошли тест на TESTER"
+  devise:
+    sessions:
+      new:
+        welcome: "Добро пожаловать в TESTER"
