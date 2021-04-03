@@ -4,7 +4,7 @@ class SessionsController < Devise::SessionsController
   private
 
   def greeting
-    flash[:notice] = "Hello, #{current_user.name}"
+    flash[:info] = "Hello, #{current_user.name}"
   end
 
   def after_sign_in_path_for(current_user)
