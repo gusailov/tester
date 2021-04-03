@@ -4,7 +4,7 @@
     <div class="navbar-text">
       <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> 
       | <%= t(".welcome") %>, <b> <%= current_user.email %> </b> |
-      <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %>
+      <%= link_to t(".log_out"), destroy_user_session_path, class: "btn btn-secondary", method: :delete %>
     </div>
   <% end %> 
 </nav>

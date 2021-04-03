@@ -37,6 +37,7 @@ en:
       category: "Category"
       level: "Level"
       questions_qty: "Questions Qty"
+      actions: "Actions"
     test:
       start: "Start test"
   test_passages:
