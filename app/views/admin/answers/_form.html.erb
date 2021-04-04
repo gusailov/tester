@@ -1,17 +1,24 @@
-<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-  
-  <%= render "/shared/errors", resource: @answer %> 
-  
-  <p>
-    <%= form.label :body %>
-    <%= form.text_field :body %>
-  </p>
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+    <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+      
+      <%= render "/shared/errors", resource: @answer %> 
+      <div class="form-group">
+        <p>
+          <%= form.label :body %>
+          <%= form.text_field :body, class: "form-control" %>
+        </p>
 
-  <p>
-    <%= form.label :correct %>
-    <%= form.check_box :correct %>
-  </p>
-  
-  <p><%= form.submit %></p>
+        <p>
+          <%= form.label :correct %>
+          <%= form.check_box :correct, class: "form-check-input" %>
+        </p>
+        
+        <p><%= form.submit class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
+    <%= link_to t(".back_to_question"), admin_question_path(@answer.question_id),
+                class: "btn btn-outline-primary text-dark text-decoration-none" %>
+  </div>
+</div>
 
-<% end %>

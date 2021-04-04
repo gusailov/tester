@@ -4,4 +4,4 @@
 
 <span> <%= link_to t("delete"), admin_category_path(category), method: :delete, data: { confirm: t("confirmation") } %> |</span>
 
-<%= render "/tests/table", tests: category.tests %> 
+<%= render "admin/tests/table", tests: category.tests %> 

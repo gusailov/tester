@@ -1,7 +1,15 @@
 <li> <%= question.body %> </li>
 
-<span> <%= link_to t("show"), admin_question_path(question) %> |</span>
+<span> <%= link_to t("show"), admin_question_path(question),
+                   class: "btn btn-outline-primary text-dark text-decoration-none" %>
+</span>
 
-<span> <%= link_to t("edit"), edit_admin_question_path(question) %> |</span>
+<span> <%= link_to t("edit"), edit_admin_question_path(question),
+                   class: "btn btn-outline-primary text-dark text-decoration-none" %>
+</span>
 
-<span> <%= link_to t("delete"), admin_question_path(question), method: :delete, data: { confirm: "Are you sure?" } %> |</span>
+<span> <%= link_to t("delete"), admin_question_path(question),
+                   class: "btn btn-outline-primary text-dark text-decoration-none",
+                   method: :delete, data: { confirm: "Are you sure?" } %>
+</span>
+
