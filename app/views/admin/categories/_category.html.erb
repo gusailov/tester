@@ -1,7 +1,10 @@
 <h3><%= Category.model_name.human %> : <%= link_to category.title, admin_category_path(category) %> </h3>
 
-<span> <%= link_to t("edit"), edit_admin_category_path(category) %> |</span>
+<%= link_to t("edit"), edit_admin_category_path(category),
+            class: "btn btn-outline-primary text-dark text-decoration-none m-2" %>
 
-<span> <%= link_to t("delete"), admin_category_path(category), method: :delete, data: { confirm: t("confirmation") } %> |</span>
+<%= link_to t("delete"), admin_category_path(category),
+            class: "btn btn-outline-primary text-dark text-decoration-none m-2",
+            method: :delete, data: { confirm: t("confirmation") } %>
 
 <%= render "admin/tests/table", tests: category.tests %> 

@@ -1,12 +1,17 @@
-<%= form_with model: [:admin, @category], local: true do |form| %>
-  
-  <%= render "/shared/errors", resource: @category %> 
-  
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
-  
-  <p><%= form.submit %></p>
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+    <%= form_with model: [:admin, @category], local: true do |form| %>
+      
+      <%= render "/shared/errors", resource: @category %>
 
-<% end %>
+      <div class="form-group">
+        <p>
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+        </p>
+          
+        <p><%= form.submit class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

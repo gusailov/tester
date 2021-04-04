@@ -77,6 +77,8 @@ ru:
       answers_list:
         add_answer: "Добавить ответ"
         back_to_test: "Вернутся к тесту"
+      new:
+        back_to_test: "Вернутся к тесту"
     categories:
       index:
         add_new_category: "Добавить категорию"
