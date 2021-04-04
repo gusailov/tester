@@ -79,6 +79,9 @@ ru:
         back_to_test: "Вернутся к тесту"
       new:
         back_to_test: "Вернутся к тесту"
+    answers:
+      form:
+        back_to_question: "Вернутся к вопросу"
     categories:
       index:
         add_new_category: "Добавить категорию"

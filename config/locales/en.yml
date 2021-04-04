@@ -72,9 +72,14 @@ en:
         questions_qty: "Questions Qty"
         actions: "Actions"
     questions:
-      show:
+      answers_list:
         add_answer: "Add Answer"
         back_to_test: "Back to Test"
+      new:
+        back_to_test: "Back to Test"
+    answers:
+      form:
+        back_to_question: "Back to question"
     categories:
       index:
         add_new_category: "Add new category"
