@@ -1,11 +1,11 @@
-<h3><%= Test.human_attribute_name(:title) %>: <%= @test.title %> </h3>
+<h4><%= Test.human_attribute_name(:title) %>: <%= @test.title %> </h4>
 
-<h3><%= Test.human_attribute_name(:level) %>: <%= test_level(@test) %> </h3>
+<h4><%= Test.human_attribute_name(:level) %>: <%= test_level(@test) %> </h4>
 
-<h3><%= Test.human_attribute_name(:author) %>: <%= @test.author.name %></h3>
+<h4><%= Test.human_attribute_name(:author) %>: <%= @test.author.name %></h4>
 
-<div>
-  <%= link_to t(".add_question"), new_admin_test_question_path(@test) %>  
+<div class="btn btn-outline-primary ">
+  <%= link_to t(".add_question"), new_admin_test_question_path(@test), class: "text-dark text-decoration-none" %>  
 </div> 
 
 <h4><%= Test.human_attribute_name(:questions) %>: </h4>
