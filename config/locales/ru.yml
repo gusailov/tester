@@ -47,7 +47,7 @@ ru:
       validate: "Нужно что-нибудь выбрать"
     result:
       success: "Тест %{title} пройден успешно. Правильных ответов"
-      failure: "Тест %{title} НЕ пройден. Правильных ответов"
+      danger: "Тест %{title} НЕ пройден. Правильных ответов"
     show:
       next: "Следующий вопрос"
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"

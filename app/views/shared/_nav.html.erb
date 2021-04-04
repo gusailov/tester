@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-info"> 
-  <div> <%= link_to t(".title"), root_path, class: "navbar-brand" %> </div>
+  <div> <%= link_to t(".title"), root_path, class: "navbar-brand ms-3" %> </div>
   <% if user_signed_in? %> 
-    <div class="navbar-text">
+    <div class="navbar-text me-3">
       <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> 
       | <%= t(".welcome") %>, <b> <%= current_user.email %> </b> |
       <%= link_to t(".log_out"), destroy_user_session_path, class: "btn btn-outline-primary", method: :delete %>

@@ -45,7 +45,7 @@ en:
       validate: "You need something to choose"
     result:
       success: "Test %{title} completed successfully. Correct answers"
-      failure: "Test %{title} NOT completed. Correct answers"
+      danger: "Test %{title} NOT completed. Correct answers"
     show:
       next: "Next question"
       question: "Question %{current_question}/ from %{questions_qty} questions"
