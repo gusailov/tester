@@ -12,12 +12,12 @@
   </head>
 
   <body >
-    <div class="container">
+    <div class="w-100">
       <%= render "/shared/nav" %>
-      <%= render "/shared/flash" %>
-
-      <div style=" padding-bottom: 2.5rem;">
-      <%= yield %>
+      
+      <div class="container-fluid pb-5" >
+        <%= render "/shared/flash" %>
+        <%= yield %>
       </div>
 
       <%= render "/shared/footer" %>
