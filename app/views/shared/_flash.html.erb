@@ -1,4 +1,5 @@
 <% flash.each do |key, message| %>
-  <% key == "alert" ? key = "danger" : key %>
-  <%= content_tag :p, message, class: "alert alert-#{key}" %> 
+  <% k = { "alert" => "danger", "notice" => "success" } %>
+  <% class_ad = k[key] || "secondary" %>
+  <%= content_tag :p, message, class: "alert alert-#{class_ad}" %> 
 <% end %> 
