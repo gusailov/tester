@@ -1,12 +1,15 @@
-<nav>
+<nav class="navbar navbar-light bg-info"> 
+  <div> <%= link_to t(".title"), root_path, class: "navbar-brand ms-3" %> </div>
   <% if user_signed_in? %> 
-    <div>
-      <div> <%= link_to t(".title"), root_path %> </div>
+    <div class="navbar-text me-3">
+      <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> 
+      | <%= t(".welcome") %>, <b> <%= current_user.email %> </b> |
+      <%= link_to t(".log_out"), destroy_user_session_path, class: "btn btn-outline-primary", method: :delete %>
     </div>
-    <div>
-      <div> <%= link_to t(".admin_panel"), admin_root_path if current_user.admin? %> </div>
-      <div> <%= t(".welcome") %>: <%= current_user.email %> </div>
-      <div> <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %> </div>
-    </div>
+  <% else %>
+    <div class="navbar-text me-3">
+      <%= link_to t(".log_in"), new_session_path(resource_name), class: "btn btn-outline-primary" %> 
+      <%= link_to t(".sign_up"), new_registration_path(resource_name), class: "btn btn-outline-primary" %>
+    </div>  
   <% end %> 
 </nav>

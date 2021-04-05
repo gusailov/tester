@@ -11,13 +11,16 @@
   </head>
 
   <body>
-    <%= render "/admin/nav" %>
-    <%= render "/shared/flash" %>
-
-    <div style=" padding-bottom: 2.5rem;">
-    <%= yield %>
+    <div class="w-100">
+      <%= render "/shared/nav" %>
+              
+      <div class="container-fluid pb-5 mb-3">
+        <%= render "/admin/nav" %>
+        <%= render "/shared/flash" %>
+        <%= yield %>
+      </div>
+      
+      <%= render "/shared/footer" %>
     </div>
-    
-    <%= render "/shared/footer" %>
   </body>
 </html>

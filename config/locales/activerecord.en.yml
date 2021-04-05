@@ -3,9 +3,9 @@ en:
     models:
       test: "Test"
       question: "Question"
+      answer: "Answer"
       category: "Category"
       test_passage: "Test passage"
-
     attributes:
       test:
         title: "Title"
@@ -17,6 +17,10 @@ en:
         test_passages: "Test passages"
       question:
         answers: "Answers"
+        body: "Question body"
+      answer:
+        body: "Answer body"
+        correct: "Correct"
     errors:
       messages:
         blank: "can't be blank"

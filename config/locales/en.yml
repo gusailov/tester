@@ -25,6 +25,8 @@ en:
       admin_panel: "Admin Panel"
       welcome: "Welcome"
       log_out: "Log out"
+      log_in: "Log in"
+      sign_up: "Sign Up"
     errors:
       header:
         one: "%{count} error detected"
@@ -37,6 +39,7 @@ en:
       category: "Category"
       level: "Level"
       questions_qty: "Questions Qty"
+      actions: "Actions"
     test:
       start: "Start test"
   test_passages:
@@ -44,7 +47,7 @@ en:
       validate: "You need something to choose"
     result:
       success: "Test %{title} completed successfully. Correct answers"
-      failure: "Test %{title} NOT completed. Correct answers"
+      danger: "Test %{title} NOT completed. Correct answers"
     show:
       next: "Next question"
       question: "Question %{current_question}/ from %{questions_qty} questions"
@@ -71,12 +74,21 @@ en:
         questions_qty: "Questions Qty"
         actions: "Actions"
     questions:
-      show:
+      answers_list:
         add_answer: "Add Answer"
         back_to_test: "Back to Test"
+      new:
+        back_to_test: "Back to Test"
+    answers:
+      form:
+        back_to_question: "Back to question"
     categories:
       index:
         add_new_category: "Add new category"
     tests_mailer:
       completed_test:
         subject: "You just completed the test on TESTER"
+  devise:
+    sessions:
+      new:
+        welcome: "Welcome to TESTER"

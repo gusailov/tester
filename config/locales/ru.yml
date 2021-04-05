@@ -25,6 +25,8 @@ ru:
       admin_panel: "Панель Администратора"
       welcome: "Добро пожаловать"
       log_out: "Выход"
+      log_in: "Вход"
+      sign_up: "Регистрация"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -39,6 +41,7 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions_qty: "Количество вопросов"
+      actions: "Действия"
     test:
       start: "Начать тест"
   test_passages:
@@ -46,7 +49,7 @@ ru:
       validate: "Нужно что-нибудь выбрать"
     result:
       success: "Тест %{title} пройден успешно. Правильных ответов"
-      failure: "Тест %{title} НЕ пройден. Правильных ответов"
+      danger: "Тест %{title} НЕ пройден. Правильных ответов"
     show:
       next: "Следующий вопрос"
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
@@ -76,9 +79,18 @@ ru:
       answers_list:
         add_answer: "Добавить ответ"
         back_to_test: "Вернутся к тесту"
+      new:
+        back_to_test: "Вернутся к тесту"
+    answers:
+      form:
+        back_to_question: "Вернутся к вопросу"
     categories:
       index:
         add_new_category: "Добавить категорию"
     tests_mailer:
       completed_test:
-        subject: "You just completed the test on TESTER"
+        subject: "Вы только что прошли тест на TESTER"
+  devise:
+    sessions:
+      new:
+        welcome: "Добро пожаловать в TESTER"

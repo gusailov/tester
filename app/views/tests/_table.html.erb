@@ -1,16 +1,13 @@
-<table style = "border-collapse: collapse; text-align: center;">
-
-<tr >
-
-  <th style = "padding: 0.5rem;" ><%= t(".title") %></th>
-
-  <th style = "padding: 0.5rem;"><%= t(".category") %></th>
-
-  <th style = "padding: 0.5rem;"><%= t(".level") %></th>
-
-  <th style = "padding: 0.5rem;"><%= t(".questions_qty") %></th>
-
-</tr>
+<table class="table table-success table-striped align-middle">
+  <thead>
+    <tr >
+      <th scope="col" ><%= t(".title") %></th>
+      <th scope="col"><%= t(".category") %></th>
+      <th scope="col"><%= t(".level") %></th>
+      <th scope="col"><%= t(".questions_qty") %></th>
+      <th scope="col"><%= t(".actions") %></th>
+    </tr>
+  </thead>
 
 <%= render tests %>
 

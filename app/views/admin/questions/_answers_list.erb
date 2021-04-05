@@ -1,8 +1,10 @@
-<%= link_to t(".add_answer"), new_admin_question_answer_path(@question) %> 
+<%= link_to t(".add_answer"), new_admin_question_answer_path(@question),
+           class: "btn btn-outline-primary text-dark text-decoration-none" %> 
 
 <h4><%= Question.human_attribute_name(:answers) %> :</h4>
   <ul>
     <%= render @question.answers %>
   </ul>
 
-<%= link_to t(".back_to_test"), admin_test_path(@question.test_id) %>
+<%= link_to t(".back_to_test"), admin_test_path(@question.test_id),
+            class: "btn btn-outline-primary text-dark text-decoration-none" %>
