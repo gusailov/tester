@@ -35,6 +35,10 @@ gem "devise", "~> 4.0"
 gem "rails-i18n", "~> 6.0.0"
 gem "devise-i18n"
 
+#NETWORKING
+
+gem 'faraday'
+
 #UI
 
 gem 'bootstrap', '~> 5.0.0.beta2'

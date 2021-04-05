@@ -54,6 +54,9 @@ ru:
       next: "Следующий вопрос"
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
       answer_variants: "Варианты Ответов:"
+    gist:
+      success: "Gist создан успешно"
+      failure: "Во время сохранения Gist произошла ошибка"
   admin:
     nav:
       title: "ТЕСТЕР"

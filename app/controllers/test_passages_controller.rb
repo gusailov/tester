@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update]
+  before_action :set_test_passage, only: %i[show result update gist]
   before_action :validate_answer_ids, only: %i[update]
 
   def show
@@ -17,6 +17,13 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+    flash_options = result.success? ? { notice: t('.success') } : { alert: t('.failure') }
+
+    redirect_to @test_passage, flash_options
   end
 
   private

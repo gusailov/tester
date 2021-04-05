@@ -24,6 +24,8 @@
           <%= b.label %>
         </p>
       <% end %>
+      <%= link_to "Gist", gist_test_passage_path(@test_passage),
+                  class: "btn btn-outline-primary", method: :post %>
       <%= form.submit t(".next"), class: "btn btn-outline-dark" %>
     </div>  
   </div> 
