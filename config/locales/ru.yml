@@ -25,6 +25,8 @@ ru:
       admin_panel: "Панель Администратора"
       welcome: "Добро пожаловать"
       log_out: "Выход"
+      log_in: "Вход"
+      sign_up: "Регистрация"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"

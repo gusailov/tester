@@ -25,6 +25,8 @@ en:
       admin_panel: "Admin Panel"
       welcome: "Welcome"
       log_out: "Log out"
+      log_in: "Log in"
+      sign_up: "Sign Up"
     errors:
       header:
         one: "%{count} error detected"
