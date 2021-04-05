@@ -42,6 +42,10 @@ gem "devise-i18n"
 
 gem 'faraday'
 
+#GITHUB_CLIENT
+
+gem "octokit", "~> 4.0"
+
 #UI
 
 gem 'bootstrap', '~> 5.0.0.beta2'
