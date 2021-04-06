@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_181159) do
+ActiveRecord::Schema.define(version: 2021_04_06_173347) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2021_03_23_181159) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["title"], name: "index_categories_on_title", unique: true
+  end
+
+  create_table "gists", force: :cascade do |t|
+    t.string "question", limit: 25
+    t.string "gist_url"
+    t.string "user"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "questions", force: :cascade do |t|
