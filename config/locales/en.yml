@@ -6,6 +6,7 @@ en:
   new: "New"
   confirmation: "Are you shure?"
   detected: "Detected"
+  gist_params_description: "Question of %{title} test from TESTER"
 
   helpers:
     submit:
@@ -53,7 +54,7 @@ en:
       question: "Question %{current_question}/ from %{questions_qty} questions"
       answer_variants: "Answer Variants:"
     gist:
-      success: "Gist created successfully"
+      success: "Gist created successfully %{link} "
       failure: "Error while saving Gist"
   admin:
     nav:

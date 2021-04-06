@@ -6,6 +6,7 @@ ru:
   new: "Новый"
   confirmation: "Вы уверены?"
   detected: "Найдено"
+  gist_params_description: "Вопрос из теста %{title}, приложения TESTER"
 
   helpers:
     submit:
@@ -55,7 +56,7 @@ ru:
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
       answer_variants: "Варианты Ответов:"
     gist:
-      success: "Gist создан успешно"
+      success: "Gist создан успешно %{link}"
       failure: "Во время сохранения Gist произошла ошибка"
   admin:
     nav:
