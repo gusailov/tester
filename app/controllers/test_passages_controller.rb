@@ -25,7 +25,7 @@ class TestPassagesController < ApplicationController
                                                    link: result.html_url) } : { alert: t('.failure') }
 
     # @gist = Gist.new(@test_passage.current_question, result.html_url, current_user.email)
-    gist_params = { question: @test_passage.current_question, gist_url: result.html_url,
+    gist_params = { question_id: @test_passage.current_question.id, gist_url: result.html_url,
                     user: current_user.email }
     Gist.create(gist_params)
     redirect_to @test_passage, flash_options
