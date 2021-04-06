@@ -56,7 +56,7 @@ ru:
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
       answer_variants: "Варианты Ответов:"
     gist:
-      success: "Gist создан успешно %{link}"
+      success: "Gist создан успешно <a href=%{link}>Ссылка</a>"
       failure: "Во время сохранения Gist произошла ошибка"
   admin:
     nav:
