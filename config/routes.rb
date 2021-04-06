@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: '/admin/tests#index'
     resources :categories
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true do
         resources :answers, shallow: true
