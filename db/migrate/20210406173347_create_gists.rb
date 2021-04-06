@@ -1,7 +1,7 @@
 class CreateGists < ActiveRecord::Migration[6.1]
   def change
     create_table :gists do |t|
-      t.string :question, limit: 25
+      t.references :question, foreign_key: true
       t.string :gist_url
       t.string :user
 
