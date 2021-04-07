@@ -6,4 +6,9 @@ module ApplicationHelper
   def github_url(author, repo)
     link_to "#{repo.capitalize}", "https://github.com/#{author}/#{repo}", target: :blank
   end
+
+  def flash_class(key)
+    k = { 'alert' => 'danger', 'notice' => 'success' }
+    "alert alert-#{k[key] || 'secondary'}"
+  end
 end

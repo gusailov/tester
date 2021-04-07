@@ -1,6 +1,6 @@
 <tr >
 
-  <td ><%= link_to gist.question.body, admin_question_path(gist.question) %></td>
+  <td ><%= link_to gist.question.body.first(25), admin_question_path(gist.question) %></td>
   <td ><%= link_to "Link", gist.gist_url %></td>
   <td ><%= gist.user.email %></td>
   
