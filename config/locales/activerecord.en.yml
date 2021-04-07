@@ -21,6 +21,10 @@ en:
       answer:
         body: "Answer body"
         correct: "Correct"
+      user:
+        name: "Name"
+        surname: "Surname"
+        dob: "Birthday"
     errors:
       messages:
         blank: "can't be blank"

@@ -64,6 +64,7 @@ en:
       admin_panel: "Admin Panel"
       welcome: "Welcome"
       log_out: "Log Out"
+      gists: "Gists"
     tests:
       create:
         success: "Test successfully created"
@@ -92,7 +93,20 @@ en:
     tests_mailer:
       completed_test:
         subject: "You just completed the test on TESTER"
+    gists:
+      index:
+        header: "Gists"
+      table:
+        question: "Question"
+        link: "Link to Gist"
+        user: "User email"
+      gist:
+        link: "Link to Gist"
   devise:
     sessions:
       new:
         welcome: "Welcome to TESTER"
+        remember_me: "remember me"
+    registrations:
+      new:
+        characters_minimum: "characters minimum"

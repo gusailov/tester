@@ -66,6 +66,7 @@ ru:
       admin_panel: "Панель Администратора"
       welcome: "Добро пожаловать"
       log_out: "Выход"
+      gists: "Gists"
     tests:
       create:
         success: "Тест создан успешно"
@@ -94,7 +95,20 @@ ru:
     tests_mailer:
       completed_test:
         subject: "Вы только что прошли тест на TESTER"
+    gists:
+      index:
+        header: "Gists"
+      table:
+        question: "Вопрос"
+        link: "Ссылка на Gist"
+        user: "Email пользователя"
+      gist:
+        link: "Ссылка на Gist"
   devise:
     sessions:
       new:
         welcome: "Добро пожаловать в TESTER"
+        remember_me: "запомнить меня"
+    registrations:
+      new:
+        characters_minimum: "символов минимум"

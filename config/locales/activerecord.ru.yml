@@ -21,6 +21,10 @@ ru:
       answer:
         body: "Текст ответа"
         correct: "Правильный"
+      user:
+        name: "Имя"
+        surname: "Фамилия"
+        dob: "Дата рождения"
     errors:
       messages:
         blank: "не может быть пустым"
