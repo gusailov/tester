@@ -7,6 +7,8 @@ en:
   confirmation: "Are you shure?"
   detected: "Detected"
   gist_params_description: "Question of %{title} test from TESTER"
+  correct_url: "the link must include 'gist.github.com'"
+  question_exist: "this question already exists in this test"
 
   helpers:
     submit:

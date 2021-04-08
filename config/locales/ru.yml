@@ -7,6 +7,8 @@ ru:
   confirmation: "Вы уверены?"
   detected: "Найдено"
   gist_params_description: "Вопрос из теста %{title}, приложения TESTER"
+  correct_url: "ссылка должна 'gist.github.com'"
+  question_exist: "такой вопрос уже присутствует в этом тесте"
 
   helpers:
     submit:

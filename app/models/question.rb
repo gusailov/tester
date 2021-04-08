@@ -5,5 +5,5 @@ class Question < ApplicationRecord
   has_many :gists
 
   validates :body, presence: true,
-                   uniqueness: { scope: :test_id, message: "this question already exists in this test" }
+                   uniqueness: { scope: :test_id, message: I18n.t('.question_exist') }
 end
