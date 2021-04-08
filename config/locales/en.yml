@@ -55,6 +55,7 @@ en:
       next: "Next question"
       question: "Question %{current_question}/ from %{questions_qty} questions"
       answer_variants: "Answer Variants:"
+      gist: "Gist"
     gist:
       success: "Gist created successfully <a href=%{link}>Link</a>"
       failure: "Error while saving Gist"
