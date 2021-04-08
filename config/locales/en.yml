@@ -6,6 +6,9 @@ en:
   new: "New"
   confirmation: "Are you shure?"
   detected: "Detected"
+  gist_params_description: "Question of %{title} test from TESTER"
+  correct_url: "the link must include 'gist.github.com'"
+  question_exist: "this question already exists in this test"
 
   helpers:
     submit:
@@ -52,6 +55,10 @@ en:
       next: "Next question"
       question: "Question %{current_question}/ from %{questions_qty} questions"
       answer_variants: "Answer Variants:"
+      gist: "Gist"
+    gist:
+      success: "Gist created successfully <a href=%{link}>Link</a>"
+      failure: "Error while saving Gist"
   admin:
     nav:
       title: "TESTER"
@@ -60,6 +67,7 @@ en:
       admin_panel: "Admin Panel"
       welcome: "Welcome"
       log_out: "Log Out"
+      gists: "Gists"
     tests:
       create:
         success: "Test successfully created"
@@ -88,7 +96,20 @@ en:
     tests_mailer:
       completed_test:
         subject: "You just completed the test on TESTER"
+    gists:
+      index:
+        header: "Gists"
+      table:
+        question: "Question"
+        link: "Link to Gist"
+        user: "User email"
+      gist:
+        link: "Link to Gist"
   devise:
     sessions:
       new:
         welcome: "Welcome to TESTER"
+        remember_me: "remember me"
+    registrations:
+      new:
+        characters_minimum: "characters minimum"

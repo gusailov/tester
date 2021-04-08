@@ -41,3 +41,5 @@ yarn-debug.log*
 
 # Ignore vscode settings
 .vscode/settings.json
+
+.env

@@ -17,12 +17,14 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[index show] do
     member do
       get :result
+      post :gist
     end
   end
 
   namespace :admin do
     root to: '/admin/tests#index'
     resources :categories
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true do
         resources :answers, shallow: true
