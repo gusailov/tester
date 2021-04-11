@@ -23,6 +23,8 @@
         <div class="mb-2">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          <%= octicon "check-circle", :class => "text-success d-none" %>
+          <%= octicon "alert", :class => "text-danger d-none " %>
         </div>
 
         <div class="mb-2">
