@@ -37,9 +37,7 @@ function sortRowsByTitle() {
 
   body.appendChild(rows[0]);
 
-  for (let i = 0; i < sortedRows.length; i++) {
-    body.appendChild(sortedRows[i]);
-  }
+  sortedRows.forEach((e) => body.appendChild(e));
 
   table.parentNode.replaceChild(sortedTable, table);
 }
