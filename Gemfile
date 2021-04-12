@@ -21,7 +21,7 @@ gem "jbuilder", "~> 2.7"
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem "dotenv-rails", groups: [:development, :test]
 
 # gem 'bcrypt', '~> 3.1.7'
 gem "rubocop-rails"
@@ -40,7 +40,7 @@ gem "devise-i18n"
 
 #NETWORKING
 
-gem 'faraday'
+gem "faraday"
 
 #GITHUB_CLIENT
 
@@ -48,8 +48,9 @@ gem "octokit", "~> 4.0"
 
 #UI
 
-gem 'bootstrap', '~> 5.0.0.beta2'
-gem 'jquery-rails'
+gem "bootstrap", "~> 5.0.0.beta2"
+gem "jquery-rails"
+gem "octicons_helper"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
