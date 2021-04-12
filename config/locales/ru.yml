@@ -77,6 +77,8 @@ ru:
         header: "Тесты"
       show:
         add_question: "Добавить вопрос"
+      form_inline:
+        submit: "ОК"
       table:
         title: "Название"
         category: "Категория"

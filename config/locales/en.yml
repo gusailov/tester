@@ -75,6 +75,8 @@ en:
         header: "Tests"
       show:
         add_question: "Add question"
+      form_inline:
+        submit: "OK"
       table:
         title: "Title"
         category: "Category"
