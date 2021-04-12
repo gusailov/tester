@@ -1,7 +1,7 @@
 <tr >
 
   <td class="align-middle">
-    <%= test.title %>
+    <%= content_tag :span, test.title, class: "test-title", data: { test_id: test.id } %>
     <%= render "form_inline", test: test == @test ? @test : test %>
   </td>
   <td class="align-middle"><%= test.category.title %></td>
@@ -12,7 +12,10 @@
     <%= link_to t("show"), admin_test_path(test), class: "btn btn-success" %>
   </td>
   <td class="align-middle">
-    <%= link_to t("edit"), edit_admin_test_path(test), class: "btn btn-warning" %>
+    <%= link_to t("edit"),
+                edit_admin_test_path(test),
+                data: { test_id: test.id },
+                class: "btn btn-warning form-inline-link" %>
   </td>
   <td class="align-middle">
     <%= link_to t("delete"), admin_test_path(test), class: "btn btn-danger", method: :delete, data: { confirm: t("confirmation") } %>
