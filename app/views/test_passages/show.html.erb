@@ -5,6 +5,12 @@
                      questions_qty: @test_passage.test.questions.count) %>
 </p>
 
+<div class="progress">
+  <%= content_tag :div, "25%", class: "progress-bar",
+                               data: { valuenow: @test_passage.test.questions.index(@test_passage.current_question) + 1,
+                                       valuemax: @test_passage.test.questions.count } %>
+</div>
+
 <p>
   <%= @test_passage.current_question.body %>
 </p>
