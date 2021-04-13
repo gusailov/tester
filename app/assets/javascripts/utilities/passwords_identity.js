@@ -5,7 +5,6 @@ document.addEventListener("turbolinks:load", function () {
   );
 
   if (password_field && confirmation_password_field) {
-    s;
     password_field.addEventListener("input", passwordsCheck);
     confirmation_password_field.addEventListener("input", passwordsCheck);
   }
