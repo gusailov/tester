@@ -6,28 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_1 = User.create(name: 'Vova', surname: 'Ruby', email: 'vova@email.com', dob: '19841023',
-                     role: 'user')
-user_2 = User.create(name: 'Misha', surname: 'Rails', email: 'misha@email.com', dob: '19860714',
-                     role: 'user')
+user_1 = Admin.create(name: 'Admin', surname: 'Tester', email: 'admin@email.com',
+                      password: '111111', dob: '19841023')
 
 categories_params = [{ title: 'Programming' }, { title: 'Mathematics' }, { title: 'Art' }]
 
 categories = Category.create(categories_params)
 
 test_1 = Test.create(title: 'Ruby Language', category_id: categories[0].id,
-                     author_id: user_2.id, level: 2)
+                     author_id: user_1.id, level: 2)
 test_2 = Test.create(title: 'JavaScript', category_id: categories[0].id,
-                     author_id: user_2.id, level: 1)
-test_3 = Test.create(title: 'HTML/CSS', category_id: categories[0].id, author_id: user_2.id)
-test_4 = Test.create(title: 'Elementary', category_id: categories[1].id, author_id: user_2.id)
-test_5 = Test.create(title: 'Artists', category_id: categories[2].id, author_id: user_2.id)
+                     author_id: user_1.id, level: 1)
+test_3 = Test.create(title: 'HTML/CSS', category_id: categories[0].id, author_id: user_1.id)
+test_4 = Test.create(title: 'Elementary', category_id: categories[1].id, author_id: user_1.id)
+test_5 = Test.create(title: 'Artists', category_id: categories[2].id, author_id: user_1.id)
 
-question_1 = Question.create(body: '2 + 2 = ?',  test_id: test_4.id)
-question_2 = Question.create(body: '4 - 5  = ?', test_id: test_4.id)
-question_3 = Question.create(body: '4 + 5  = ?', test_id: test_4.id)
-question_4 = Question.create(body: '20 / 5  = ?', test_id: test_4.id)
-question_5 = Question.create(body: '7 * 3  = ?', test_id: test_4.id)
+question_1 = test_4.questions.create(body: '2 + 2 = ?')
+question_2 = test_4.questions.create(body: '4 - 5  = ?')
+question_3 = test_4.questions.create(body: '4 + 5  = ?')
+question_4 = test_4.questions.create(body: '20 / 5  = ?')
+question_5 = test_4.questions.create(body: '7 * 3  = ?')
 
 answers_params = [
   { body: '5', question_id: question_1.id },
@@ -53,15 +51,3 @@ answers_params = [
 ]
 
 Answer.create(answers_params)
-
-result_params = [
-  { user_id: user_1.id, test_id: test_1.id, completed: true },
-  { user_id: user_1.id, test_id: test_2.id, completed: true },
-  { user_id: user_1.id, test_id: test_3.id, completed: true },
-  { user_id: user_1.id, test_id: test_4.id },
-  { user_id: user_1.id, test_id: test_5.id },
-  { user_id: user_2.id, test_id: test_1.id }
-
-]
-
-Result.create(result_params)
