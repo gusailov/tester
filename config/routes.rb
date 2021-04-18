@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: 'tests#index'
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
       post :gist
     end
   end
+
+  resources :contacts, only: %i[new create]
 
   namespace :admin do
     root to: '/admin/tests#index'
