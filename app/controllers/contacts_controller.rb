@@ -2,18 +2,16 @@ class ContactsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @contact = Contact.new
   end
 
   def create
-    @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
-      flash.now[:error] = nil
-      redirect_to root_path, notice: 'Message sent successfully'
-    else
-      flash.now[:error] = 'Cannot send message'
-      render :new
-    end
+    name = params[:name]
+    email = params[:email]
+    message = params[:message]
+    ContactsMailer.contact(name,email,message).deliver_now
+  end
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   <div class="col col-md-4">
-    <%= form_for @contact do |f| %>
+    <%= form_with url: contacts_path do |f| %>
         <%= render "/shared/errors", resource: @contact %> 
         <div class="form-group">
 
@@ -18,11 +18,6 @@
           <%= f.label :message %>
           <%= f.text_area :message, as: :text, class: "form-control mb-2" %>
           </p>
-
-          <div class="d-none ">
-            <%= f.label :nickname %> <br>
-            <%= f.text_field :nickname, hint: "leave this field blank" %>
-          </div>
 
           <%= f.submit "Send Message", class: "btn btn-primary" %>
         </div> 
