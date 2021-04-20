@@ -5,21 +5,21 @@
         <div class="form-group">
 
           <p>
-          <%= f.label :name %>
+          <%= f.label t(".name") %>
           <%= f.text_field :name, required: true, class: "form-control" %>
           </p>
 
           <p>
-          <%= f.label :email %>
+          <%= f.label t(".email") %>
           <%= f.text_field :email, required: true, class: "form-control" %>
           </p>
 
           <p>
-          <%= f.label :message %>
+          <%= f.label t(".message") %>
           <%= f.text_area :message, as: :text, class: "form-control mb-2" %>
           </p>
 
-          <%= f.submit "Send Message", class: "btn btn-primary" %>
+          <%= f.submit t(".send_message"), class: "btn btn-primary" %>
         </div> 
     <% end %>
   </div>

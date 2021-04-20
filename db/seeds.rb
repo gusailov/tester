@@ -21,11 +21,11 @@ test_3 = Test.create(title: 'HTML/CSS', category_id: categories[0].id, author_id
 test_4 = Test.create(title: 'Elementary', category_id: categories[1].id, author_id: user_1.id)
 test_5 = Test.create(title: 'Artists', category_id: categories[2].id, author_id: user_1.id)
 
-question_1 = test_4.questions.create(body: '2 + 2 = ?')
-question_2 = test_4.questions.create(body: '4 - 5  = ?')
-question_3 = test_4.questions.create(body: '4 + 5  = ?')
-question_4 = test_4.questions.create(body: '20 / 5  = ?')
-question_5 = test_4.questions.create(body: '7 * 3  = ?')
+question_1 = Question.create(body: '2 + 2 = ?',  test_id: test_4.id)
+question_2 = Question.create(body: '4 - 5  = ?', test_id: test_4.id)
+question_3 = Question.create(body: '4 + 5  = ?', test_id: test_4.id)
+question_4 = Question.create(body: '20 / 5  = ?', test_id: test_4.id)
+question_5 = Question.create(body: '7 * 3  = ?', test_id: test_4.id)
 
 answers_params = [
   { body: '5', question_id: question_1.id },

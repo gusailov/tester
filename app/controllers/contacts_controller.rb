@@ -5,13 +5,10 @@ class ContactsController < ApplicationController
   end
 
   def create
-    name = params[:name]
-    email = params[:email]
-    message = params[:message]
-    ContactsMailer.contact(name,email,message).deliver_now
-  end
+    contact_params = { name: params[:name], email: params[:email], message: params[:message] }
 
-  def contact_params
-    params.require(:contact).permit(:name, :email, :message)
+    ContactsMailer.contact(contact_params).deliver_now
+    redirect_to new_contact_path
+    flash[:info] = t('.message_sent')
   end
 end
