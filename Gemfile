@@ -23,9 +23,6 @@ gem "jbuilder", "~> 2.7"
 
 gem "dotenv-rails", groups: [:development, :test]
 
-# Mail form
-gem 'mail_form'
-
 # gem 'bcrypt', '~> 3.1.7'
 gem "rubocop-rails"
 # Use Active Storage variant
