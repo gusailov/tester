@@ -30,6 +30,8 @@ ru:
       log_out: "Выход"
       log_in: "Вход"
       sign_up: "Регистрация"
+    footer:
+      contact_us: "Связаться с нами"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -117,3 +119,11 @@ ru:
     registrations:
       new:
         characters_minimum: "символов минимум"
+  contacts:
+    create:
+      message_sent: "Сообщение отправлено"
+    new:
+      name: "Имя"
+      email: "Адрес электронной почты"
+      message: "Текст сообщения"
+      send_message: "Отправить"

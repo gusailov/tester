@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :contacts, only: %i[new create]
+
   namespace :admin do
     root to: '/admin/tests#index'
     resources :categories

@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+    <%= form_with url: contacts_path do |f| %>
+        <%= render "/shared/errors", resource: @contact %> 
+        <div class="form-group">
+
+          <p>
+          <%= f.label t(".name") %>
+          <%= f.text_field :name, required: true, class: "form-control" %>
+          </p>
+
+          <p>
+          <%= f.label t(".email") %>
+          <%= f.text_field :email, required: true, class: "form-control" %>
+          </p>
+
+          <p>
+          <%= f.label t(".message") %>
+          <%= f.text_area :message, as: :text, class: "form-control mb-2" %>
+          </p>
+
+          <%= f.submit t(".send_message"), class: "btn btn-primary" %>
+        </div> 
+    <% end %>
+  </div>
+</div> 

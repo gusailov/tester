@@ -30,6 +30,8 @@ en:
       log_out: "Log out"
       log_in: "Log in"
       sign_up: "Sign Up"
+    footer:
+      contact_us: "Contact us"
     errors:
       header:
         one: "%{count} error detected"
@@ -115,3 +117,11 @@ en:
     registrations:
       new:
         characters_minimum: "characters minimum"
+  contacts:
+    create:
+      message_sent: "Message Sent"
+    new:
+      name: "Name"
+      email: "Email"
+      message: "Message"
+      send_message: "Send"
