@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :author_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :gists
+  has_many :users_rewards
+  has_many :rewards, through: :users_rewards, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true,
                     format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
