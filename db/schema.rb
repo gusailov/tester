@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_190730) do
   create_table "rewards", force: :cascade do |t|
     t.string "title", null: false
     t.string "rule_type", null: false
-    t.integer "rule_value", null: false
+    t.string "rule_value", null: false
     t.string "img_title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
