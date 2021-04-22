@@ -9,6 +9,10 @@ ru:
   gist_params_description: "Вопрос из теста %{title}, приложения TESTER"
   correct_url: "ссылка должна 'gist.github.com'"
   question_exist: "такой вопрос уже присутствует в этом тесте"
+  success_test_count: "Количество успешно пройденных тестов"
+  tests_of_category: "Прохождение всех тестов категории"
+  tests_of_level: "Прохождение всех тестов уровня"
+  first_try_pass: "Прохождение теста с первого раза"
 
   helpers:
     submit:
@@ -72,6 +76,7 @@ ru:
       welcome: "Добро пожаловать"
       log_out: "Выход"
       gists: "Gists"
+      create_new_reward: "Создать новую награду"
     tests:
       create:
         success: "Тест создан успешно"

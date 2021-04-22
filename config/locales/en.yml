@@ -74,6 +74,7 @@ en:
       welcome: "Welcome"
       log_out: "Log Out"
       gists: "Gists"
+      create_new_reward: "Create New Reward"
     tests:
       create:
         success: "Test successfully created"
