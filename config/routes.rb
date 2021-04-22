@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: '/admin/tests#index'
     resources :categories
+    resources :rewards
     resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member
