@@ -10,6 +10,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+      current_user.reward_check
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
