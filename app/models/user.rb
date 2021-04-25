@@ -28,24 +28,36 @@ class User < ApplicationRecord
   end
 
   def reward_check
-    rewards = Reward.all
-    rewards.each do |reward|
-      case
-      when success_test_passages.length.to_s == reward.rule_value
-        users_rewards.create(reward_id: reward.id)
-      end
+    r = Reward.all
+    r.each do |reward|
+      next if  rewards.include?(reward)
+      next unless send("#{reward.rule_type}?", reward)
+
+      rewards.push(reward)
     end
   end
 
   def success_tests
-    success_test_passages = test_passages.filter { |tp| tp.success? }
-
-    success_test_passages.each do |t|
-      tests << t.test
-    end
+    test_passages.filter(&:success?).map(&:test)
   end
 
   private
+
+  def success_test_count?(reward)
+    success_tests.length.to_s == reward.rule_value.to_s
+  end
+
+  def tests_of_category?(reward)
+    success_tests.filter do |st|
+      st.category.title == reward.rule_value
+    end.eql?(Test.by_category(reward.rule_value).to_a)
+  end
+
+  def tests_of_level?
+    success_tests.filter do |st|
+      st.level == reward.rule_value
+    end.eql?(Test.with_level(reward.rule_value))
+  end
 
   def tests_with_level(level)
     tests.with_level(level)

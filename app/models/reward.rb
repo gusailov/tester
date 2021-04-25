@@ -6,15 +6,4 @@ class Reward < ApplicationRecord
 
   has_many :users_rewards
   has_many :users, through: :users_rewards
-
-  scope :success_test_count, -> {
-                               where(rule_type: 'success_test_count') 
-                             }
-  scope :tests_of_category, ->(value) {
-                              where(rule_type: 'tests_of_category') && where(rule_value: value)
-                            }
-  scope :tests_of_level, ->(value) {
-                           where(rule_type: 'tests_of_level') && where(rule_value: value)
-                         }
-  scope :first_try_pass, -> { where(rule_type: 'first_try_pass') }
 end
