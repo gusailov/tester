@@ -21,6 +21,23 @@ class Admin::RewardsController < Admin::BaseController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @reward.update(reward_params)
+      redirect_to admin_rewards_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @reward.destroy
+
+    redirect_to admin_rewards_path
+  end
+
   private
 
   def find_reward

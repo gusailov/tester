@@ -3,4 +3,12 @@
   <div class=""><%= t(reward.rule_type) %></div>
   <div class=""><%= reward.rule_value %></div>
   <%= octicon reward.img_title, :height => 50, :class => "text-success" %>
+  <span> <%= link_to t("edit"), edit_admin_reward_path(reward),
+                     class: "btn btn-outline-primary text-dark text-decoration-none" %>
+  </span>  
+
+  <span> <%= link_to t("delete"), admin_reward_path(reward),
+                     class: "btn btn-outline-primary text-dark text-decoration-none",
+                     method: :delete, data: { confirm: t("confirmation") } %> 
+  </span>                     
 </div>
