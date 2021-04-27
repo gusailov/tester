@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update gist]
   before_action :validate_answer_ids, only: %i[update]
+  before_action :reward_check, only: %i[result]
 
   def show
   end

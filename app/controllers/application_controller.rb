@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :reward_check
 
   def default_url_options
     I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
@@ -29,6 +28,6 @@ class ApplicationController < ActionController::Base
   end
 
   def reward_check
-    current_user.try(:reward_check)
+    RewardService.new(current_user).try(:reward_check)
   end
 end
