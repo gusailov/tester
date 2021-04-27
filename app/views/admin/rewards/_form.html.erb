@@ -12,7 +12,7 @@
         
         <p class="mb-3">
           <%= form.label :rule_type %>
-          <%= form.select :rule_type, Reward::REWARDS_RULES.to_a, {}, class: "form-select mb-1" %>
+          <%= form.select :rule_type, RewardService::REWARDS_RULES.to_a, {}, class: "form-select mb-1" %>
         </p>
         
         <p class="mb-3">

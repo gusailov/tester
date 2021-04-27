@@ -27,6 +27,8 @@ class User < ApplicationRecord
     is_a?(Admin)
   end
 
+  private
+
   def tests_with_level(level)
     tests.with_level(level)
   end

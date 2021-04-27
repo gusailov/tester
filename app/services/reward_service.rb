@@ -1,4 +1,9 @@
 class RewardService
+  REWARDS_RULES = { I18n.t('.success_test_count') => 'success_test_count',
+                    I18n.t('.tests_of_category') => 'tests_of_category',
+                    I18n.t('.tests_of_level') => 'tests_of_level',
+                    I18n.t('.first_try_pass') => 'first_try_pass' }.freeze
+
   def initialize(user)
     @user = user
   end
