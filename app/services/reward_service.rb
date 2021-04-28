@@ -34,9 +34,12 @@ class RewardService
     end.eql?(Test.by_category(reward.rule_value).to_a)
   end
 
-  def tests_of_level?
+  def first_try_pass?(reward)
+  end
+
+  def tests_of_level?(reward)
     success_tests.filter do |st|
-      st.level == reward.rule_value
-    end.eql?(Test.with_level(reward.rule_value))
+      st.level == Test::TEST_LEVELS.invert[reward.rule_value.to_sym]
+    end.eql?(Test.send(reward.rule_value).to_a)
   end
 end
