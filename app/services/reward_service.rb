@@ -35,6 +35,11 @@ class RewardService
   end
 
   def first_try_pass?(reward)
+    success_tests.count do |st|
+      st.title == reward.rule_value
+    end == 1 && @user.tests.count do |t|
+                  t.title == reward.rule_value
+                end == 1
   end
 
   def tests_of_level?(reward)
