@@ -14,6 +14,8 @@ class Test < ApplicationRecord
 
   scope :with_level, ->(level) { where(level: level) }
 
+  scope :level_by_name, ->(level) { where(level: TEST_LEVELS.index(level.to_sym)) }
+
   scope :easy, -> { with_level(0) }
   scope :elementary, -> { with_level(1) }
   scope :advanced, -> { with_level(2) }
@@ -22,7 +24,7 @@ class Test < ApplicationRecord
 
   scope :by_category, ->(title) { joins(:category).where(categories: { title: title }) }
 
-   def self.titles_by_category(title)
+  def self.titles_by_category(title)
     by_category(title).order(title: :desc).pluck(:title)
   end
 end

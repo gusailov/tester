@@ -54,6 +54,7 @@ en:
   test_passages:
     update:
       validate: "You need something to choose"
+      get_reward: "Congratulations!! You're get a reward"
     result:
       success: "Test %{title} completed successfully. Correct answers"
       danger: "Test %{title} NOT completed. Correct answers"

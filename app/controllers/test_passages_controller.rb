@@ -16,7 +16,7 @@ class TestPassagesController < ApplicationController
         if @rewards.present?
           current_user.rewards.push(@rewards)
 
-          flash[:notice] = "Вы получили награду"
+          flash[:notice] = t('.get_reward')
         end
       end
       TestsMailer.completed_test(@test_passage).deliver_now

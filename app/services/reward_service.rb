@@ -6,15 +6,16 @@ class RewardService
 
   def initialize(test_passage)
     @test_passage = test_passage
-    @rewards = []
   end
 
   def get_rewards
-    r = Reward.all
-    r.each do |reward|
-      @rewards << reward if send("#{reward.rule_type}?", reward)
+    Reward.all.select { |reward| reward if check_reward?(reward) }
+  end
+
+  def check_reward?(reward)
+    unless @test_passage.user.rewards.include?(reward)
+      send("#{reward.rule_type}?", reward.rule_value)
     end
-    @rewards
   end
 
   private
@@ -23,19 +24,19 @@ class RewardService
     @test_passage.user.success_tests
   end
 
-  def success_test_count?(reward)
-    success_tests.count == reward.rule_value
+  def success_test_count?(count)
+    success_tests.count == count.to_i
   end
 
-  def tests_of_category?(reward)
-    (Test.by_category(reward.rule_value).ids - success_tests.by_category(reward.rule_value).ids).empty?
+  def tests_of_category?(category_title)
+    (Test.by_category(category_title).ids - success_tests.by_category(category_title).ids).empty?
   end
 
-  def first_try_pass?(reward)
-    (success_tests.find_by title: reward.rule_value) == 1 && (@user.tests.find_by title: reward.rule_value) == 1
+  def first_try_pass?(test_title)
+    (success_tests.find_by title: test_title) == 1 && (@test_passage.user.tests.find_by title: test_title) == 1
   end
 
-  def tests_of_level?(reward)
-    (Test.send(reward.rule_value).ids - success_tests.send(reward.rule_value).ids)
+  def tests_of_level?(level)
+    (Test.level_by_name(level).ids - success_tests.level_by_name(level).ids).empty?
   end
 end
