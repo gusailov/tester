@@ -4,47 +4,38 @@ class RewardService
                     I18n.t('.tests_of_level') => 'tests_of_level',
                     I18n.t('.first_try_pass') => 'first_try_pass' }.freeze
 
-  def initialize(user)
-    @user = user
+  def initialize(test_passage)
+    @test_passage = test_passage
+    @rewards = []
   end
 
-  def reward_check
+  def get_rewards
     r = Reward.all
     r.each do |reward|
-      next if @user.rewards.include?(reward)
-      next unless send("#{reward.rule_type}?", reward)
-
-      @user.rewards.push(reward)
+      @rewards << reward if send("#{reward.rule_type}?", reward)
     end
+    @rewards
   end
 
   private
 
   def success_tests
-    @user.test_passages.filter(&:success?).map(&:test)
+    @test_passage.user.success_tests
   end
 
   def success_test_count?(reward)
-    success_tests.length.to_s == reward.rule_value.to_s
+    success_tests.count == reward.rule_value
   end
 
   def tests_of_category?(reward)
-    success_tests.filter do |st|
-      st.category.title == reward.rule_value
-    end.eql?(Test.by_category(reward.rule_value).to_a)
+    (Test.by_category(reward.rule_value).ids - success_tests.by_category(reward.rule_value).ids).empty?
   end
 
   def first_try_pass?(reward)
-    success_tests.count do |st|
-      st.title == reward.rule_value
-    end == 1 && @user.tests.count do |t|
-                  t.title == reward.rule_value
-                end == 1
+    (success_tests.find_by title: reward.rule_value) == 1 && (@user.tests.find_by title: reward.rule_value) == 1
   end
 
   def tests_of_level?(reward)
-    success_tests.filter do |st|
-      st.level == Test::TEST_LEVELS.invert[reward.rule_value.to_sym]
-    end.eql?(Test.send(reward.rule_value).to_a)
+    (Test.send(reward.rule_value).ids - success_tests.send(reward.rule_value).ids)
   end
 end

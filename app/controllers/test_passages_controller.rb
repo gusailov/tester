@@ -10,8 +10,15 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      @test_passage.success = true if @test_passage.success?
+      if @test_passage.success?
+        @test_passage.update(success: true)
+        @rewards = RewardService.new(@test_passage).get_rewards
+        if @rewards.present?
+          current_user.rewards.push(@rewards)
 
+          flash[:notice] = "Вы получили награду"
+        end
+      end
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

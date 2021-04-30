@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  scope :success, -> { where(success: true) }
+
   def completed?
     current_question.nil?
   end
@@ -41,6 +43,8 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_set_next_question
-    self.current_question = test.questions.order(:id).where('id>?', current_question.id).first
+    unless completed?
+      self.current_question = test.questions.order(:id).where('id>?', current_question.id).first
+    end
   end
 end

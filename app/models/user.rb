@@ -27,6 +27,10 @@ class User < ApplicationRecord
     is_a?(Admin)
   end
 
+  def success_tests
+    tests.where(test_passages: { success: true })
+  end
+
   private
 
   def tests_with_level(level)
