@@ -9,6 +9,10 @@ en:
   gist_params_description: "Question of %{title} test from TESTER"
   correct_url: "the link must include 'gist.github.com'"
   question_exist: "this question already exists in this test"
+  success_test_count: "Number of successfully passed tests"
+  tests_of_category: "Passing all tests from category"
+  tests_of_level: "Passing all tests from level"
+  first_try_pass: "Passing the test on the first try"
 
   helpers:
     submit:
@@ -50,6 +54,7 @@ en:
   test_passages:
     update:
       validate: "You need something to choose"
+      get_reward: "Congratulations!! You're get a reward"
     result:
       success: "Test %{title} completed successfully. Correct answers"
       danger: "Test %{title} NOT completed. Correct answers"
@@ -70,6 +75,7 @@ en:
       welcome: "Welcome"
       log_out: "Log Out"
       gists: "Gists"
+      create_new_reward: "Create New Reward"
     tests:
       create:
         success: "Test successfully created"
@@ -85,6 +91,11 @@ en:
         level: "Level"
         questions_qty: "Questions Qty"
         actions: "Actions"
+    rewards:
+      index:
+        header: "All available Rewards"
+      create:
+        success: "Reward successfully created"
     questions:
       answers_list:
         add_answer: "Add Answer"
@@ -125,3 +136,7 @@ en:
       email: "Email"
       message: "Message"
       send_message: "Send"
+  rewards:
+    rewards: "Rewards"
+    index:
+      header: "All your rewards"

@@ -1,0 +1,20 @@
+<div  class="card  col-sm-2 m-1"> 
+  <div class="card-img-top"><%= octicon reward.img_title, :height => 50, :class => "text-success" %></div>
+    <div class="card-body">
+
+      <%= content_tag :div, reward.title, class: "card-title" %>
+      <div class="card-text"><%= t(reward.rule_type) %></div>
+      <div class="card-text"><%= reward.rule_value %></div>
+
+      <div class="row ">
+        <div class="col"> <%= link_to t("edit"), edit_admin_reward_path(reward),
+                                      class: "btn btn-outline-primary text-dark text-decoration-none" %>
+        </div>  
+
+        <div class="col"> <%= link_to t("delete"), admin_reward_path(reward),
+                                      class: "btn btn-outline-primary text-dark text-decoration-none",
+                                      method: :delete, data: { confirm: t("confirmation") } %> 
+      </div>                     
+    </div>                     
+  </div>                     
+</div>

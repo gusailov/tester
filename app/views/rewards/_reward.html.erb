@@ -1,0 +1,8 @@
+<div  class="card  col-sm-2 m-1">
+  <div class="card-img-top"> <%= octicon reward.img_title, :height => 100, :class => "text-success" %></div>
+    <div class="card-body">
+      <%= content_tag :div, reward.title, class: "card-title" %>
+      <div class="card-text"><%= t(reward.rule_type) %></div>
+      <div class="card-text"><%= reward.rule_value %></div>
+  </div>
+</div>

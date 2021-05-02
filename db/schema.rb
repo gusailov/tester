@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_173347) do
+ActiveRecord::Schema.define(version: 2021_04_28_182101) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -47,6 +50,15 @@ ActiveRecord::Schema.define(version: 2021_04_06_173347) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
+  create_table "rewards", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "rule_type", null: false
+    t.string "rule_value", null: false
+    t.string "img_title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "test_passages", force: :cascade do |t|
     t.integer "user_id"
     t.integer "test_id"
@@ -54,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_173347) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "success", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -97,6 +110,15 @@ ActiveRecord::Schema.define(version: 2021_04_06_173347) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_rewards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "reward_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reward_id"], name: "index_users_rewards_on_reward_id"
+    t.index ["user_id"], name: "index_users_rewards_on_user_id"
+  end
+
   add_foreign_key "answers", "questions"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
@@ -106,4 +128,6 @@ ActiveRecord::Schema.define(version: 2021_04_06_173347) do
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
+  add_foreign_key "users_rewards", "rewards"
+  add_foreign_key "users_rewards", "users"
 end

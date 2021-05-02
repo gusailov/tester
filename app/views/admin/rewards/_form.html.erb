@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+
+    <%= form_with model: [:admin, @reward], local: true do |form| %>
+      
+      <%= render "/shared/errors", resource: @reward %> 
+      <div class="form-group">
+        <p class="mb-3">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+        </p>
+        
+        <p class="mb-3">
+          <%= form.label :rule_type %>
+          <%= form.select :rule_type, RewardService::REWARDS_RULES.to_a, {}, class: "form-select mb-1" %>
+        </p>
+        
+        <p class="mb-3">
+          <%= form.label :rule_value %>
+          <%= form.text_field :rule_value, class: "form-control" %>
+        </p>
+
+        <p class="mb-3">
+          <%= form.label :img_title %>
+          <%= form.text_field :img_title, class: "form-control" %>
+        </p>
+               
+        <p><%= form.submit class: "btn btn-primary" %></p>
+      </div>
+
+    <% end %>
+  </div>
+</div>
