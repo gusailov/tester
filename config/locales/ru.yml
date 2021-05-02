@@ -96,6 +96,8 @@ ru:
     rewards:
       index:
         header: "Все доступные награды"
+      create:
+        success: "Награда успешно создана"
     questions:
       answers_list:
         add_answer: "Добавить ответ"

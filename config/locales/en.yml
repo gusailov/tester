@@ -94,6 +94,8 @@ en:
     rewards:
       index:
         header: "All available Rewards"
+      create:
+        success: "Reward successfully created"
     questions:
       answers_list:
         add_answer: "Add Answer"
