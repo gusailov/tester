@@ -1,5 +1,9 @@
 <h1><%= TestPassage.model_name.human %>:<%= @test_passage.test.title %> </h1>
-
+<div>
+<%= content_tag :p,
+                "", class: "", id: "countdown",
+                    data: { countdown_value: @test_passage.test.countdown } %>
+</div>
 <p class="text-decoration-underline "> 
   <%= t(".question", current_question: @test_passage.test.questions.index(@test_passage.current_question) + 1,
                      questions_qty: @test_passage.test.questions.count) %>
