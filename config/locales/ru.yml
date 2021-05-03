@@ -24,6 +24,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        countdown: "Выберите '0' чтобы выключить таймер"
     select:
       prompt: "Сделайте выбор"
   shared:

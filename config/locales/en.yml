@@ -24,6 +24,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        countdown: "Select '0' for disable countdiwn timer"
     select:
       prompt: "Please select"
   shared:
