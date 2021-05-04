@@ -84,6 +84,7 @@ en:
         header: "Tests"
       show:
         add_question: "Add question"
+        minutes: "minutes"
       form_inline:
         submit: "OK"
       table:

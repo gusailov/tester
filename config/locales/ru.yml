@@ -86,6 +86,7 @@ ru:
         header: "Тесты"
       show:
         add_question: "Добавить вопрос"
+        minutes: "минут"
       form_inline:
         submit: "ОК"
       table:
