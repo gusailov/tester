@@ -1,7 +1,7 @@
 document.addEventListener("turbolinks:load", function () {
   let control = document.querySelector("#countdown");
   if (!control) {
-    sessionStorage.setItem("time", 0);
+    sessionStorage.removeItem("time");
   }
   if (control) {
     const startingValue = control.dataset.countdownValue;
@@ -22,14 +22,19 @@ document.addEventListener("turbolinks:load", function () {
       time--;
       sessionStorage.setItem("time", time);
     }
-    let countdown = setInterval(countdownUpdate, 100);
+
+    let countdown = setInterval(countdownUpdate, 1000);
+
     function redirect() {
+      let next_btn = document.querySelector("#next_btn");
+      let time_is_over = document.querySelector("#time_is_over");
       time = 0;
       clearInterval(countdown);
+      next_btn.classList.add("disabled");
+      time_is_over.classList.remove("d-none");
       setTimeout(() => {
         url = window.location.href;
-        console.log(`${url}/result`);
-        // window.location.assign(`${url}/result`);
+        window.location.assign(`${url}/result`);
       }, 2000);
     }
   }

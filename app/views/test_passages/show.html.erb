@@ -1,8 +1,14 @@
 <h1><%= TestPassage.model_name.human %>:<%= @test_passage.test.title %> </h1>
 <div>
-<%= content_tag :p,
-                "", class: "", id: "countdown",
-                    data: { countdown_value: @test_passage.test.countdown } %>
+<h4>
+<span><%= t(".time_left") %></span>
+  <%= content_tag :span,
+                  "", class: "", id: "countdown",
+                      data: { countdown_value: @test_passage.test.countdown } %>
+</h4>
+  <p id="time_is_over" class="alert alert-danger d-none">
+    <%= t(".time_is_over") %>
+  </p>
 </div>
 <p class="text-decoration-underline "> 
   <%= t(".question", current_question: @test_passage.test.questions.index(@test_passage.current_question) + 1,
@@ -36,7 +42,7 @@
       <% end %>
       <%= link_to t(".gist"), gist_test_passage_path(@test_passage),
                   class: "btn btn-outline-primary", method: :post %>
-      <%= form.submit t(".next"), class: "btn btn-outline-dark" %>
+      <%= form.submit t(".next"), id: "next_btn", class: "btn btn-outline-dark" %>
     </div>  
   </div> 
 </div> 

@@ -66,6 +66,8 @@ ru:
       question: "Вопрос №%{current_question}/ всего вопросов %{questions_qty}"
       answer_variants: "Варианты Ответов:"
       gist: "Gist"
+      time_is_over: "Время вышло"
+      time_left: "Осталось времени:"
     gist:
       success: "Gist создан успешно <a href=%{link}>Ссылка</a>"
       failure: "Во время сохранения Gist произошла ошибка"
@@ -86,7 +88,11 @@ ru:
         header: "Тесты"
       show:
         add_question: "Добавить вопрос"
-        minutes: "минут"
+        minutes:
+          few: "%{count} минуты"
+          many: "%{count} минут"
+          one: "%{count} минута"
+          other: "%{count} минут"
       form_inline:
         submit: "ОК"
       table:
