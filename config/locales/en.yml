@@ -24,6 +24,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        countdown: "Select '0' for disable countdiwn timer"
     select:
       prompt: "Please select"
   shared:
@@ -63,6 +64,8 @@ en:
       question: "Question %{current_question}/ from %{questions_qty} questions"
       answer_variants: "Answer Variants:"
       gist: "Gist"
+      time_is_over: "Time Is Over"
+      time_left: "Time left:"
     gist:
       success: "Gist created successfully <a href=%{link}>Link</a>"
       failure: "Error while saving Gist"
@@ -83,6 +86,9 @@ en:
         header: "Tests"
       show:
         add_question: "Add question"
+        minutes:
+          one: "%{count} minute"
+          other: "%{count} minutes"
       form_inline:
         submit: "OK"
       table:

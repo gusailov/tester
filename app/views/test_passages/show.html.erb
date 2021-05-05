@@ -1,4 +1,16 @@
 <h1><%= TestPassage.model_name.human %>:<%= @test_passage.test.title %> </h1>
+<div>
+  <h4>
+    <span><%= t(".time_left") %></span>
+    <%= content_tag :span,
+                    "", class: "", id: "countdown",
+                        data: { countdown_value: @test_passage.test.countdown } %>
+  </h4>
+  
+  <p id="time_is_over" class="alert alert-danger d-none">
+    <%= t(".time_is_over") %>
+  </p>
+</div>
 
 <p class="text-decoration-underline "> 
   <%= t(".question", current_question: @test_passage.test.questions.index(@test_passage.current_question) + 1,
@@ -17,23 +29,23 @@
 
 <div class="card card-border-primary">
   <div class="card-body">
-  <p>
-    <%= t(".answer_variants") %>
-  </p>
+    <p>
+      <%= t(".answer_variants") %>
+    </p>
 
-  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-    <div class="form-group">
-      <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,
-                                      :id, :body, include_hidden: false do |b| %>
-        <p>
-          <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input" %>
-          <%= b.label %>
-        </p>
-      <% end %>
-      <%= link_to t(".gist"), gist_test_passage_path(@test_passage),
-                  class: "btn btn-outline-primary", method: :post %>
-      <%= form.submit t(".next"), class: "btn btn-outline-dark" %>
-    </div>  
+    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+      <div class="form-group">
+        <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,
+                                        :id, :body, include_hidden: false do |b| %>
+          <p>
+            <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input" %>
+            <%= b.label %>
+          </p>
+        <% end %>
+        <%= link_to t(".gist"), gist_test_passage_path(@test_passage),
+                    class: "btn btn-outline-primary", method: :post %>
+        <%= form.submit t(".next"), id: "next_btn", class: "btn btn-outline-dark" %>
+      </div>  
+    <% end %>
   </div> 
 </div> 
-<% end %>

@@ -15,6 +15,7 @@ en:
         questions: "Questions"
         users: "Users"
         test_passages: "Test passages"
+        countdown: "Countdown"
       question:
         answers: "Answers"
         body: "Question body"

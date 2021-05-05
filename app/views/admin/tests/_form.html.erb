@@ -12,13 +12,18 @@
         
         <p class="mb-3">
           <%= form.label :level %>
-          <%= form.select :level, Test::TEST_LEVELS.invert.to_a, {}, class: "form-select mb-1" %>
+          <%= form.select :level, Test::TEST_LEVELS.invert.to_a, {}, class: "form-select mt-1" %>
         </p>
         
         <p class="mb-3">
           <%= form.label :category_id %>
           <%= form.collection_select :category_id, Category.all, :id,
-                                     :title, { prompt: true }, class: "form-select mb-3" %>
+                                     :title, { prompt: true }, class: "form-select mt-1" %>
+        </p>
+
+        <p class="mb-3">
+          <%= form.label :countdown %>
+          <%= form.select :countdown, (0..60), {}, class: "form-select mt-1" %>
         </p>
         
         <p><%= form.submit class: "btn btn-primary" %></p>

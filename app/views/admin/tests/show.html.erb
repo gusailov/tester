@@ -4,6 +4,8 @@
 
 <h4><%= Test.human_attribute_name(:author) %>: <%= @test.author.name %></h4>
 
+<h4><%= Test.human_attribute_name(:countdown) %>: <%= t(".minutes", count: @test.countdown) %> <%=  %></h4>
+
 <div class="btn btn-outline-primary ">
   <%= link_to t(".add_question"), new_admin_test_question_path(@test),
               class: "text-dark text-decoration-none" %>  

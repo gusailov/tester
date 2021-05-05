@@ -15,6 +15,7 @@ ru:
         questions: "Вопросы"
         users: "Пользователи"
         test_passages: "Пройденные тесты"
+        countdown: "Счетчик"
       question:
         answers: "Ответы"
         body: "Текст вопроса"
