@@ -1,3 +1,6 @@
+example 
+https://gusailov-tester.herokuapp.com/
+
 Installing Rails
 https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails
 
