@@ -1,5 +1,8 @@
 example 
-https://gusailov-tester.herokuapp.com/
+https://gusailov-tester.herokuapp.com
+test user:
+  email:user@mail.com
+  password:111111
 
 Installing Rails
 https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails
